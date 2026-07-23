@@ -10,3 +10,8 @@ pr,coded_channel,coded_observable,tier,fix_location,regression_test_asserts_on,s
 15040,determinism,no,diff,DAG converter edge order,high-degree-node determinism,determinism,yes
 16237,determinism,no,diff,ConsolidateBlocks basis selection,deterministic basis_gate choice,determinism,yes
 14765,output_semantic,yes,diff,Target instruction_supported,instruction_supported query (observable),output_semantic,yes
+13670,output_semantic,yes,diff-testread,commutation checker,asserts commute() result vs matrix reference,output_semantic,yes
+16337,output_semantic,yes,diff-testread,commutation checker CRZ,asserts Operator equality and inequality,output_semantic,yes
+15626,compilation_failure,yes,diff-testread,control-flow BreakLoopOp,transpile previously raised (assertIsNotNone),compilation_failure,yes
+15967,circuit_quality,yes,diff-testread,C transpiler instruction count,num_instructions 8 vs 7 at opt3,circuit_quality,yes
+14998,compilation_failure,yes,source-build,VF2PostLayout uncoupled qubit,buggy parent RAISES; fix returns [2 0 1],compilation_failure,yes
