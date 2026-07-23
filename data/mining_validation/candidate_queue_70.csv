@@ -1,0 +1,45 @@
+pr,title,pr_url,linked_issue,linked_issue_url
+16476,Fix cache and prediction misses in Target::qargs,https://github.com/Qiskit/qiskit/pull/16476,,
+16409,Accept rotation gate names in CommutationChecker filters,https://github.com/Qiskit/qiskit/pull/16409,16407,https://github.com/Qiskit/qiskit/issues/16407
+16402,Fix incorrect global phase shift for P and U1 gates in CommutativeCancellation,https://github.com/Qiskit/qiskit/pull/16402,16377,https://github.com/Qiskit/qiskit/issues/16377
+15147,Fix schedule analysis passes with empty circuits,https://github.com/Qiskit/qiskit/pull/15147,15145,https://github.com/Qiskit/qiskit/issues/15145
+15117,Avoid panics in Optimize1qGatesDecomposition,https://github.com/Qiskit/qiskit/pull/15117,15116,https://github.com/Qiskit/qiskit/issues/15116
+15074,Fix pickling of SabreSwap,https://github.com/Qiskit/qiskit/pull/15074,15071,https://github.com/Qiskit/qiskit/issues/15071
+14978,Un-provide standard_operation for PyGate,https://github.com/Qiskit/qiskit/pull/14978,14974,https://github.com/Qiskit/qiskit/issues/14974
+15131,Check target gates are parameterized in optimize1qgatesdecomposition,https://github.com/Qiskit/qiskit/pull/15131,14743,https://github.com/Qiskit/qiskit/issues/14743
+15110,Raise exception not panic on bad ConsolidateBlocks input,https://github.com/Qiskit/qiskit/pull/15110,14646,https://github.com/Qiskit/qiskit/issues/14646
+14405,Read timing constraints from target when no backend is provided,https://github.com/Qiskit/qiskit/pull/14405,14329,https://github.com/Qiskit/qiskit/issues/14329
+16392,Fix global cache of SynthesizeRZRotations,https://github.com/Qiskit/qiskit/pull/16392,16385,https://github.com/Qiskit/qiskit/issues/16385
+16237,Fix non-deterministic ConsolidateBlocks output with fixed transpiler seed,https://github.com/Qiskit/qiskit/pull/16237,,
+16215,Preserve global phase in Commuting2qGateRouter,https://github.com/Qiskit/qiskit/pull/16215,,
+16201,Fix excessive global-phase accumulation in UnrollForLoops,https://github.com/Qiskit/qiskit/pull/16201,,
+16163,Fix unsafe symmetric simplification of XXPlusYY in CommutativeOptimization,https://github.com/Qiskit/qiskit/pull/16163,,
+16153,Fix cancellation of CS and CSdg in InverseCancellation,https://github.com/Qiskit/qiskit/pull/16153,,
+16075,Fix forced ConsolidateBlocks decomposition for incomplete bases,https://github.com/Qiskit/qiskit/pull/16075,,
+16054,Fix ParameterVector global-phase panic in RemoveIdentityEquivalent,https://github.com/Qiskit/qiskit/pull/16054,,
+16023,Fix commutation checking between two Pauli product measurements,https://github.com/Qiskit/qiskit/pull/16023,,
+16004,Fix synth_qft_line failure for circuits with 32 or more qubits,https://github.com/Qiskit/qiskit/pull/16004,,
+15967,Fix stale best-DAG update in C transpiler optimization level 3,https://github.com/Qiskit/qiskit/pull/15967,,
+15933,Fix matrix-size validation in CommutationChecker,https://github.com/Qiskit/qiskit/pull/15933,,
+15781,Fix synth_clifford_depth_lnn for single-qubit Clifford circuits,https://github.com/Qiskit/qiskit/pull/15781,,
+15685,Fix HLS qubit tracking for plugin-generated operations,https://github.com/Qiskit/qiskit/pull/15685,,
+15556,Fix zero-length permutation synthesis overflow,https://github.com/Qiskit/qiskit/pull/15556,,
+15401,Fix incorrect argument passed to generate_unroll_3q in Clifford+T transpilation,https://github.com/Qiskit/qiskit/pull/15401,,
+15286,Respect Target when selecting a non-default UnitarySynthesis plugin,https://github.com/Qiskit/qiskit/pull/15286,,
+15143,Fix control-flow qargs handling in BasisTranslator,https://github.com/Qiskit/qiskit/pull/15143,,
+15083,Fix ConsolidateBlocks qubit mapping inside control-flow blocks,https://github.com/Qiskit/qiskit/pull/15083,,
+15040,Fix DAG push-edge ordering non-determinism,https://github.com/Qiskit/qiskit/pull/15040,,
+15024,Preserve registers through Python Layout to Rust TranspileLayout conversion,https://github.com/Qiskit/qiskit/pull/15024,,
+14956,Fix global-phase handling in CommutativeCancellation,https://github.com/Qiskit/qiskit/pull/14956,,
+14869,Do not run VF2PostLayout when an explicit layout is supplied,https://github.com/Qiskit/qiskit/pull/14869,,
+14765,Fix Target.py_instruction_supported behavior,https://github.com/Qiskit/qiskit/pull/14765,,
+14670,Fix MCX dirty-ancilla qubit accounting in HLS selection,https://github.com/Qiskit/qiskit/pull/14670,,
+14655,"Fix CommutativeInverseCancellation for Clifford, control-flow, and non-invertible operations",https://github.com/Qiskit/qiskit/pull/14655,14407,https://github.com/Qiskit/qiskit/issues/14407
+14606,Fix ApplyLayout with empty layout,https://github.com/Qiskit/qiskit/pull/14606,,
+14597,Fix HLS classical-bit mapping from control-flow blocks,https://github.com/Qiskit/qiskit/pull/14597,,
+14330,Fix alignment checks of stretch variables,https://github.com/Qiskit/qiskit/pull/14330,14264,https://github.com/Qiskit/qiskit/issues/14264
+16249,Fix subtraction-underflow panic in ConstrainedReschedule,https://github.com/Qiskit/qiskit/pull/16249,16232,https://github.com/Qiskit/qiskit/issues/16232
+16246,Initialize ConstrainedReschedule.target unconditionally,https://github.com/Qiskit/qiskit/pull/16246,16245,https://github.com/Qiskit/qiskit/issues/16245
+16151,Fix ConstrainedReschedule barrier handling,https://github.com/Qiskit/qiskit/pull/16151,16135,https://github.com/Qiskit/qiskit/issues/16135
+16154,Add safe shape checking to synth_cz_depth_line_mr,https://github.com/Qiskit/qiskit/pull/16154,16152,https://github.com/Qiskit/qiskit/issues/16152
+15137,Fix HighLevelSynthesis for custom gate calibrations,https://github.com/Qiskit/qiskit/pull/15137,13728,https://github.com/Qiskit/qiskit/issues/13728

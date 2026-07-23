@@ -1,0 +1,55 @@
+{
+  "schema": "targeted_regression_triggers/v1",
+  "note": "Separate category from generic Benchpress units (test_origin=targeted_regression_trigger). Faults are dev-only (never in a release wheel); confirmation requires the exact from-source candidate build.",
+  "n_units": 3,
+  "units": [
+    {
+      "test_id": "trig-h1-elide-permutations",
+      "test_origin": "targeted_regression_trigger",
+      "target_fault_id": "qiskit-pr-14603-elide-permutations",
+      "target_pass_or_component": "ElidePermutations (optimization)",
+      "trigger_rationale": "PermutationGate over qubits overlapping prior swaps forces ElidePermutations to update the qubit mapping; the buggy version mislabels it.",
+      "oracle_type": "semantic",
+      "expected_baseline_behavior": "Operator.from_circuit(transpiled) equiv Operator(original)",
+      "expected_candidate_behavior": "NOT equivalent (wrong mapping / TranspileLayout)",
+      "backend_id": "line",
+      "opt_level": 3,
+      "source": "regression test added by PR #14603 (test_unitary_equivalence_permutation_gates)",
+      "test_provenance": "extracted_from_fix",
+      "test_available_sha": "96fda18888de4492f37ccdb93faf15dc014c99eb",
+      "available_before_candidate": false
+    },
+    {
+      "test_id": "trig-h2-final-layout-composition",
+      "test_origin": "targeted_regression_trigger",
+      "target_fault_id": "qiskit-pr-14919-final-layout",
+      "target_pass_or_component": "routing final_layout composition (SabreSwap/BasicSwap/LookaheadSwap)",
+      "trigger_rationale": "An identity circuit (all-to-all CX then its inverse) routed on a constrained map; multiple passes set final_layout, so a wrong composition breaks identity.",
+      "oracle_type": "semantic",
+      "expected_baseline_behavior": "transpiled equiv original (identity preserved)",
+      "expected_candidate_behavior": "NOT equivalent (final_layout composed incorrectly)",
+      "backend_id": "line",
+      "opt_level": 3,
+      "source": "derived from regression test added by PR #14919 (test_final_layout_combined_correctly)",
+      "test_provenance": "extracted_from_fix",
+      "test_available_sha": "dfcc5c6ce87fa424c8fd7abf22baba9e8750fa66",
+      "available_before_candidate": false
+    },
+    {
+      "test_id": "trig-h3-vf2-all-1q",
+      "test_origin": "targeted_regression_trigger",
+      "target_fault_id": "qiskit-pr-14730-vf2layout-determinism",
+      "target_pass_or_component": "VF2Layout (layout) determinism",
+      "trigger_rationale": "All active qubits carry only single-qubit gates, which exposed the non-deterministic VF2Layout ordering even with a fixed seed.",
+      "oracle_type": "property",
+      "expected_baseline_behavior": "repeated fixed-seed transpilations are identical",
+      "expected_candidate_behavior": "repeated runs differ (non-deterministic layout)",
+      "backend_id": "heavy_hex",
+      "opt_level": 1,
+      "source": "regression test added by PR #14730 (test_determinism_all_1q)",
+      "test_provenance": "extracted_from_fix",
+      "test_available_sha": "d33ef5335e05523e35a29530dbc389c52c8e7bc7",
+      "available_before_candidate": false
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Temporal train/test split (METHODOLOGY §5.1).
+# Applied at split_group_id level (§1.6): a group straddling the cutoff goes wholly to test.
+# Seed value below is ILLUSTRATIVE. Finalize only after the full dated event set exists, so
+# both splits contain a historical/mutation mix (see data/events/HISTORICAL_CANDIDATES.md).
+cutoff_date: "2026-01-01"   # events with event_date >= cutoff_date are test

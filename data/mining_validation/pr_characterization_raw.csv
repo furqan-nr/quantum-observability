@@ -1,0 +1,69 @@
+pr,channel,observable,title,created_at,merged_at,time_to_merge_days,additions,deletions,changed_files,commits
+13670,output_semantic,yes,Fix 4-pi periodicity of controlled rotations in the `CommutationChecker`,2025-01-15T16:51:17Z,2025-01-16T16:18:59Z,0.98,62,38,3,4
+13790,output_semantic,yes,Do not contract control-flow operations during `SabreSwap`,2025-02-05T14:48:35Z,2025-02-11T17:20:19Z,6.11,85,33,3,1
+13820,compilation_failure,yes,Delegate `BasePass.__call__` to `PassManager.run`,2025-02-10T18:23:59Z,2025-03-06T02:38:27Z,23.34,136,62,8,4
+13833,contract_metadata,no,Fix tracking of routing permutation in Sabre with disjoint backends,2025-02-12T22:29:41Z,2025-02-13T09:38:30Z,0.46,43,0,3,1
+13874,output_semantic,yes,Use average gate fidelity in the commutation checker,2025-02-18T17:36:40Z,2025-03-06T00:34:42Z,15.29,361,260,13,22
+13910,contract_metadata,no,Propagate `DAGCircuit.name` in `ApplyLayout`,2025-02-21T22:33:01Z,2025-02-24T22:14:21Z,2.99,51,3,4,4
+13945,contract_metadata,no,Fix composing virtual permutation layouts for `ElidePermutations` and `StarPreRouting`,2025-03-03T09:23:23Z,2026-06-02T15:39:07Z,456.26,125,2,4,11
+14041,contract_metadata,no,Fix deepcopy/pickle of `DAGCircuit` variable IO nodes,2025-03-17T21:03:47Z,2025-03-18T10:04:12Z,0.54,81,1,3,3
+14603,contract_metadata,no,Fix `ElidePermutations` pass in the presence of `PermutationGate`s,2025-06-15T12:39:40Z,2025-06-16T16:25:15Z,1.16,28,9,3,2
+14667,compilation_failure,yes,Restore correct max_trials behaviour for VF2Layout pass,2025-06-26T00:20:28Z,2025-07-07T08:06:03Z,11.32,69,1,3,3
+14730,determinism,no,Fix non-determinism VF2Layout with only 1q gates,2025-07-14T18:38:57Z,2025-07-15T10:25:42Z,0.66,58,2,4,1
+14763,determinism,no,Fix non-determinism in `CommutativeCancellation`,2025-07-19T01:34:41Z,2025-08-15T10:57:32Z,27.39,52,22,5,1
+14919,contract_metadata,no,Fix composition of `final_layout`,2025-08-15T14:56:45Z,2025-08-15T16:49:46Z,0.08,87,10,6,1
+14938,contract_metadata,no,Fix VF2 layout allocation with idle qubits,2025-08-22T17:16:51Z,2025-08-22T18:38:14Z,0.06,73,6,6,1
+14939,contract_metadata,no,Fix `TranspileLayout.initial_index_layout` with unordered virtuals,2025-08-22T17:45:06Z,2025-08-22T18:54:01Z,0.05,26,4,3,1
+14998,compilation_failure,yes,Fix `VF2PostLayout` with uncoupled qubits in `strict_direction=True`,2025-09-08T10:57:37Z,2025-09-08T13:46:13Z,0.12,41,6,2,1
+15258,compilation_failure,yes,Fix reuse of `ConsolidateBlocks` instances,2025-10-27T16:15:11Z,2025-10-28T18:46:35Z,1.11,98,16,4,3
+15626,compilation_failure,yes,"Fix ""`BreakLoopOp' object has no attribute 'blocks"" bug (2nd take)",2026-01-29T14:41:08Z,2026-01-30T18:12:37Z,1.15,21,1,2,1
+15875,compilation_failure,yes,Fix: `BasisTranslator` processing of nested `ControlFlowOp`,2026-03-25T14:37:42Z,2026-03-26T15:10:34Z,1.02,112,27,4,8
+15943,global_phase,no,Fix `TemplateOptimization` dropping the `global_phase` on substitution,2026-04-03T18:20:34Z,2026-04-10T17:45:38Z,6.98,106,2,5,13
+16285,compilation_failure,yes,Fix panic on `1.0` error in `VF2Layout`,2026-05-27T12:03:55Z,2026-05-27T15:41:16Z,0.15,108,2,4,2
+16310,compilation_failure,yes,Reject loopback edges in `CouplingMap`,2026-05-29T12:07:10Z,2026-05-31T09:35:29Z,1.89,30,1,3,1
+16337,output_semantic,yes,Fix `CommutationChecker` for controlled rotation gates,2026-05-31T13:19:37Z,2026-06-08T21:19:59Z,8.33,1133,20,5,22
+16428,output_semantic,yes,Correctly combining control modifiers in `OptimizeAnnotated`,2026-06-14T09:52:13Z,2026-06-15T09:38:32Z,0.99,85,2,3,1
+16476,performance,yes,Fix cache and prediction misses in `Target::qargs`,2026-06-23T10:33:17Z,2026-06-23T15:22:32Z,0.2,13,6,2,1
+16409,output_semantic,yes,Accept rotation gate names in CommutationChecker filters,2026-06-11T03:24:09Z,2026-06-24T10:55:49Z,13.31,42,7,3,7
+16402,global_phase,no,Fix incorrect global phase shift for P and U1 gates in CommutativeCancellation,2026-06-09T21:13:56Z,2026-07-01T13:25:44Z,21.67,34,2,3,2
+15147,compilation_failure,yes,Fix schedule analysis passes with empty circuits,2025-10-09T15:03:04Z,2025-10-20T13:44:00Z,10.95,103,82,4,1
+15117,compilation_failure,yes,Avoid panics in `Optimize1qGatesDecomposition`,2025-10-03T10:59:23Z,2025-10-03T12:09:15Z,0.05,26,11,3,1
+15074,compilation_failure,yes,Fix pickling of SabreSwap,2025-09-25T03:36:20Z,2025-09-25T10:12:19Z,0.27,117,2,4,1
+14978,output_semantic,yes,Un-provide `standard_operation` for `PyGate`,2025-09-02T10:48:38Z,2025-09-04T06:49:53Z,1.83,35,52,5,4
+15131,circuit_quality,yes,Check target gates are parameterized in optimize1qgatesdecomposition,2025-10-06T13:54:17Z,2025-10-08T15:51:59Z,2.08,50,3,3,3
+15110,compilation_failure,yes,Raise exception not panic on bad `ConsolidateBlocks` input,2025-10-02T17:38:51Z,2025-10-20T15:14:08Z,17.9,57,13,3,1
+14405,circuit_quality,yes,Read timing constraints from target when no backend is provided,2025-05-19T19:33:50Z,2025-08-12T20:05:11Z,85.02,32,4,3,9
+16392,output_semantic,yes,Have `SynthesizeRZRotations` clear `rsgridsynth` global caches,2026-06-07T10:03:32Z,2026-06-17T09:49:06Z,9.99,45,1,4,2
+16237,determinism,no,Fix determinism in `ConsolidateBlocks`,2026-05-22T07:47:41Z,2026-06-03T12:54:38Z,12.21,32,9,3,6
+16215,global_phase,no,Fix Commuting2qGateRouter global phase handling,2026-05-20T07:23:54Z,2026-05-21T11:45:13Z,1.18,23,2,3,1
+16201,global_phase,no,Fix UnrollForLoops global phase accumulation,2026-05-17T10:45:19Z,2026-05-21T18:45:10Z,4.33,47,0,3,10
+16163,output_semantic,yes,Fix invalid simplification of XXPlusYY gates in CommutativeOptimization,2026-05-10T05:29:49Z,2026-05-18T10:12:02Z,8.2,71,6,3,4
+16153,output_semantic,yes,Fix `InverseCancellation` for symmetric pairs,2026-05-07T11:54:01Z,2026-05-19T10:28:09Z,11.94,90,17,3,3
+16075,compilation_failure,yes,Fix forced block consolidation for incomplete basis sets,2026-04-23T16:43:19Z,2026-04-23T19:26:41Z,0.11,27,0,3,2
+16054,compilation_failure,yes,Fix panic in `RemoveIdentityEquivalent` with `ParameterVector` global phase,2026-04-17T00:07:17Z,2026-04-17T10:27:31Z,0.43,35,2,3,1
+16023,output_semantic,yes,Fixed commutation checking between two Pauli product measurements,2026-04-14T13:54:38Z,2026-04-15T10:35:30Z,0.86,80,4,3,5
+16004,compilation_failure,yes,Fix `synth_qft_line` with 32 or more qubits,2026-04-12T10:14:43Z,2026-04-13T09:51:42Z,0.98,18,1,3,1
+15967,circuit_quality,yes,Fix C transpiler level 3 optimisation loop,2026-04-08T05:44:49Z,2026-04-13T12:03:55Z,5.26,128,4,3,19
+15933,compilation_failure,yes,Correctly enforce matrix size check in `CommutationChecker`,2026-04-01T12:43:46Z,2026-04-02T09:19:40Z,0.86,27,3,3,2
+15781,compilation_failure,yes,Fix synth_clifford_depth_lnn for single-qubit Cliffords,2026-03-08T10:31:02Z,2026-03-09T12:25:56Z,1.08,35,15,8,3
+15685,output_semantic,yes,Fix HighLevelSynthesis qubit tracking mechanism,2026-02-15T10:23:58Z,2026-02-15T15:50:38Z,0.23,102,2,3,1
+15556,compilation_failure,yes,Handle zero-length permutation synthesis,2026-01-12T15:57:04Z,2026-01-13T12:09:36Z,0.84,11,6,3,2
+15401,output_semantic,yes,Bug fix for Clifford+T transpilation: passing incorrect argument to `generate_unroll_3q`,2025-12-01T11:30:45Z,2025-12-01T14:12:12Z,0.11,38,3,3,2
+15286,output_semantic,yes,Unitary synthesis bug fix,2025-11-02T10:40:06Z,2025-11-05T10:40:50Z,3.0,43,1,3,1
+15143,output_semantic,yes,Fix incorrect mapping of ControlFlow block qargs in `BasisTranslator`,2025-10-09T13:23:30Z,2025-10-09T20:34:19Z,0.3,96,4,3,6
+15083,output_semantic,yes,Fix qubit mapping in `ConsolidateBlocks` control-flow blocks,2025-09-26T07:46:33Z,2025-10-20T13:41:49Z,24.25,98,17,5,2
+15040,determinism,no,Fix edge-order non-determinism when adding DAG nodes,2025-09-21T12:31:31Z,2025-09-23T08:37:09Z,1.84,129,77,5,1
+15024,contract_metadata,no,Preserve registers in output TranspileLayout,2025-09-17T16:28:52Z,2025-09-17T20:25:43Z,0.16,117,20,8,3
+14956,global_phase,no,Fix global phase handling in `CommutativeCancellation`,2025-08-27T09:21:53Z,2025-08-28T15:35:00Z,1.26,125,50,3,8
+14869,circuit_quality,yes,Fix calls to `VF2PostLayout` after optimization loop at O3,2025-08-11T15:07:28Z,2025-09-04T16:31:59Z,24.06,109,23,5,13
+14765,output_semantic,yes,Fix a bug in `Target::py_instruction_supported` and remove the `py` token parameter,2025-07-21T07:46:15Z,2025-07-21T14:51:41Z,0.3,19,9,4,2
+14670,output_semantic,yes,Fix MCXSynthesis1DirtyKG24 and MCXSynthesis2DirtyKG24 plugins,2025-06-26T07:40:16Z,2025-06-26T12:18:47Z,0.19,37,4,3,1
+14655,output_semantic,yes,Fixing problems in `CommutativeInverseCancellation` transpiler pass,2025-06-23T08:11:15Z,2025-07-09T12:33:00Z,16.18,109,22,3,9
+14606,compilation_failure,yes,Fix `ApplyLayout` with empty layout,2025-06-15T14:59:04Z,2025-06-16T14:02:06Z,0.96,20,2,3,1
+14597,output_semantic,yes,Fix classical bit mapping in HLS pass,2025-06-13T16:22:53Z,2025-06-16T17:30:48Z,3.05,54,2,3,4
+14330,compilation_failure,yes,Fix alignment checks of `stretch` variables,2025-05-08T16:27:46Z,2025-05-08T18:39:14Z,0.09,65,5,3,2
+16249,compilation_failure,yes,fix: Ensure there is no subtraction panic via underflow,2026-05-22T19:57:57Z,2026-05-29T18:16:42Z,6.93,34,3,3,13
+16246,compilation_failure,yes,Initialize ConstrainedReschedule.target unconditionally,2026-05-22T15:21:10Z,2026-05-26T17:14:44Z,4.08,63,1,3,2
+16151,compilation_failure,yes,Fix ConstrainedReschedule barrier handling,2026-05-07T10:17:03Z,2026-05-27T10:38:30Z,20.01,28,1,3,9
+16154,compilation_failure,yes,Add safe shape checking to `synth_cz_depth_line_mr`,2026-05-07T12:52:18Z,2026-05-07T15:38:27Z,0.12,42,3,5,2
+15137,contract_metadata,no,Fix HLS for custom gate calibrations,2025-10-08T06:07:39Z,2025-10-08T15:13:58Z,0.38,37,3,3,1

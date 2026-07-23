@@ -1,0 +1,6 @@
+metric,invisible_median,visible_median,mannwhitney_p,cliffs_delta
+lines added,52.0,54.0,0.657,0.07
+lines deleted,3.0,4.0,0.611,-0.08
+files changed,3.0,3.0,0.117,0.22
+commits,2.0,2.0,0.531,-0.1
+time-to-merge (days),1.18,1.15,0.738,-0.05

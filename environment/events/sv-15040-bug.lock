@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "sv-15040-bug",
+  "requested": "25c3206f0b94c3e1a55e334a050a0d1fd144f996^",
+  "resolved_sha": "89b21680681293ff09a961af4f93ba252e61a0aa",
+  "qiskit_version": "2.3.0.dev0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

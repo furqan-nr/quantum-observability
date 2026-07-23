@@ -1,0 +1,7 @@
+pr,channel,pre_version,post_version,trigger,family,n,backend,opt
+14956,global_phase,2.1.0,2.2.0,,qft,5,none,3
+15040,determinism,2.2.0,2.3.0,,qft,8,line,1
+15024,contract_metadata,2.2.0,2.3.0,,qft,8,line,1
+16215,global_phase,2.4.2,2.5.0,,qft,6,ring,3
+16201,global_phase,2.4.2,2.5.0,,qft,6,none,3
+16237,determinism,2.4.2,2.5.0,,qft,8,ring,1

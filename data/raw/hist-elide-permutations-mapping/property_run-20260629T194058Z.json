@@ -1,0 +1,124 @@
+{
+  "schema": "property_run/v1",
+  "event_id": "hist-elide-permutations-mapping",
+  "oracle": "property_layout",
+  "track": "secondary_retrospective",
+  "rows": [
+    {
+      "unit": "trig-h1-elide-permutations-none-opt3",
+      "equivalent": true,
+      "divergent_fields": [],
+      "details": {
+        "compared_fields": [
+          "routing_permutation",
+          "final_index_layout",
+          "initial_index_layout"
+        ],
+        "baseline": {
+          "routing_permutation": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "final_index_layout": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "initial_index_layout": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "candidate": {
+          "routing_permutation": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "final_index_layout": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "initial_index_layout": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "unit": "trig-h1-elide-permutations-line-opt3",
+      "equivalent": true,
+      "divergent_fields": [],
+      "details": {
+        "compared_fields": [
+          "routing_permutation",
+          "final_index_layout",
+          "initial_index_layout"
+        ],
+        "baseline": {
+          "routing_permutation": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "final_index_layout": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "initial_index_layout": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "candidate": {
+          "routing_permutation": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "final_index_layout": [
+            0,
+            1,
+            4,
+            2,
+            3
+          ],
+          "initial_index_layout": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      }
+    }
+  ]
+}

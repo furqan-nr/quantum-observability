@@ -1,0 +1,8 @@
+pr,title,author_raw,friend_raw,proposed_channel,proposed_observable,final_channel,final_observable,basis,decided_by
+14667,Restore max_trials VF2Layout,circuit_quality/yes,compilation_failure/yes,circuit_quality,yes,compilation_failure,yes,Rule2-check-PR,frozen_codebook_v2_adjudication
+14998,VF2PostLayout uncoupled strict_dir,compilation_failure/yes,contract_metadata/no,compilation_failure,yes,compilation_failure,yes,Rule1-CRASH-confirmed-release-notes-PR14998,frozen_codebook_v2_adjudication_CORRECTED
+14938,VF2 idle qubits,circuit_quality/yes,contract_metadata/no,contract_metadata,no,contract_metadata,no,Rule3-applied-output-correct,frozen_codebook_v2_adjudication
+15258,Reuse ConsolidateBlocks,output_semantic/yes,compilation_failure/yes,compilation_failure,yes,compilation_failure,yes,Rule1-panic,frozen_codebook_v2_adjudication
+13874,Avg gate fidelity commutation,circuit_quality/yes,output_semantic/yes,output_semantic,yes,output_semantic,yes,Rule3-check-issue13547,frozen_codebook_v2_adjudication
+14041,deepcopy/pickle DAGCircuit IO,compilation_failure/yes,contract_metadata/no,contract_metadata,no,contract_metadata,no,Rule5-or-exclude-scope,frozen_codebook_v2_adjudication
+13820,BasePass.__call__ to PassManager.run,contract_metadata/no,compilation_failure/yes,compilation_failure,yes,compilation_failure,yes,Rule1-direct-call-raises,frozen_codebook_v2_adjudication

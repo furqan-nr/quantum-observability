@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "smoke-2_4_2",
+  "requested": "2.4.2",
+  "resolved_sha": "5a1cf3159aedad954767956d6a5c81a06d043d71",
+  "qiskit_version": "2.4.2",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

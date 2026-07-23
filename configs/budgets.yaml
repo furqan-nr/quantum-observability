@@ -1,0 +1,17 @@
+# CI budgets per tier (METHODOLOGY "CI Tier Definitions").
+# Budgets are in wall-clock seconds per event (total_cost_s = transpilation + oracle).
+# Placeholder values; calibrate against baseline costs in Phase 2.
+
+tiers:
+  pr:
+    budget_s: 120        # tight: minutes
+    exploration_reserve_frac: 0.20   # METHODOLOGY §4.2: 10-20% stage-independent
+  nightly:
+    budget_s: 3600       # moderate: ~1 hour
+    exploration_reserve_frac: 0.15
+  release:
+    budget_s: null       # full suite (no cap)
+    exploration_reserve_frac: 0.10
+
+# Small positive floor so stage-mismatch alone never zeroes a test (METHODOLOGY §4.1).
+risk_score_epsilon: 0.05

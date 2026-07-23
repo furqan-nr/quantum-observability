@@ -1,0 +1,25 @@
+pr,title,r1_channel,r1_observable,r2_channel,r2_observable,r2_confidence,binary_agree,channel_agree,r2_note
+16428,Correctly combining control modifiers in OptimizeAnnotated,output_semantic,yes,output_semantic,yes,high,Y,Y,OptimizeAnnotated did a problem when nested controlled operations had different 
+16337,Fix CommutationChecker for controlled rotation gates,output_semantic,yes,output_semantic,yes,high,Y,Y,circuit changes
+16310,Reject loopback edges in CouplingMap,compilation_failure,yes,compilation_failure,yes,high,Y,Y,Bad input created the problem. So the fix rejects bad input.
+15943,Fix TemplateOptimization dropping the global_phase on substitution,global_phase,no,global_phase,no,high,Y,Y,Qiskit strict test might detect bug or would dilebertaly ignore it.
+15875,Fix BasisTranslator processing of nested ControlFlowOp,compilation_failure,yes,compilation_failure,yes,medium,Y,Y,BasisTranslator missed converting unsupported gates inside nested control-flow b
+15626,Fix BreakLoopOp object has no attribute blocks bug,compilation_failure,yes,compilation_failure,yes,high,Y,Y,transpilation raised an AttributeError because they have no blocks attribute
+15258,Fix reuse of ConsolidateBlocks instances,output_semantic,yes,compilation_failure,yes,high,Y,N,the panic exception occurs. Transpilation fails instead of returning a circuit.
+14998,Fix VF2PostLayout with uncoupled qubits in strict_direction=True,compilation_failure,yes,contract_metadata,no,high,N,N,VF2Layout with uncoupled-qubit metadata caused problems during later reconstruct
+14939,Fix TranspileLayout.initial_index_layout with unordered virtuals,contract_metadata,no,contract_metadata,no,high,Y,Y,again metadata problem
+14938,Fix VF2 layout allocation with idle qubits,circuit_quality,yes,contract_metadata,no,high,N,N,correct applied behavior but metadata problem
+14919,Fix composition of final_layout,contract_metadata,no,contract_metadata,no,high,Y,Y,Multiple routing steps produce incorrect metadata though Transpilation still wor
+14763,Fix non-determinism in CommutativeCancellation,determinism,no,determinism,no,high,Y,Y,CommulativeCancellation process items in random error so circuit graph is differ
+14730,Fix non-determinism VF2Layout with only 1q gates,determinism,no,determinism,no,high,Y,Y,VF2Layout gave different results each time with the same seed. The circuit was  
+14667,Restore correct max_trials behaviour for VF2Layout pass,circuit_quality,yes,compilation_failure,yes,medium,Y,N,There is also quality aspect but compilation failure is taking precedence
+14041,Fix deepcopy/pickle of DAGCircuit variable IO nodes,compilation_failure,yes,contract_metadata,no,low,N,N,"When a DAGCircuit was loaded, some output nodes could be incorrectly treated as "
+13945,Fix composing virtual permutation layouts for ElidePermutations and StarPreRouting,contract_metadata,no,contract_metadata,no,medium,Y,Y,The PR is clearly saying remaining problem is the incorrect composition of the v
+13910,Propagate DAGCircuit.name in ApplyLayout,contract_metadata,no,contract_metadata,no,high,Y,Y,the compiled circuit is same but metadata was lost
+13874,Use average gate fidelity in the commutation checker,circuit_quality,yes,output_semantic,yes,high,Y,N,Commutation checker handled a very small-angle gate inconsistently.
+13833,Fix tracking of routing permutation in Sabre with disjoint backends,contract_metadata,no,contract_metadata,no,high,Y,Y,Output circuit remain correct but metadata was wrong
+13820,Delegate BasePass.__call__ to PassManager.run,contract_metadata,no,compilation_failure,yes,high,N,N,alling ALAPScheduleAnalysis directly on a circuit failed
+13790,Do not contract control-flow operations during SabreSwap,output_semantic,yes,output_semantic,yes,high,Y,Y,"SabreSwap removed dependencies that were important.Due to this, transpiled circu"
+13670,Fix 4-pi periodicity of controlled rotations in the CommutationChecker,output_semantic,yes,output_semantic,yes,high,Y,Y,Computation checker incorrectly treated certain controlled rotations. It can ena
+14603,Fix ElidePermutations pass in the presence of PermutationGates,contract_metadata,no,contract_metadata,no,high,Y,Y,the bug made the compiler produce correct circuit but metadata was wrong
+16285,Fix panic on 1.0 error in VF2Layout,compilation_failure,yes,compilation_failure,yes,high,Y,Y,same problem of panic as above. The fix prevent the panic.

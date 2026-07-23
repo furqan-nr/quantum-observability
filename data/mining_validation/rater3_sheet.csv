@@ -1,0 +1,71 @@
+pr,title,manifestation_channel,observable_by_output_oracle,confidence,notes
+14667,Restore correct max_trials behaviour for VF2Layout pass,compilation_failure,yes,medium,There is also quality aspect but compilation failure is taking precedence
+13833,Fix tracking of routing permutation in Sabre with disjoint backends,contract_metadata,no,high,Output circuit remain correct but metadata was wrong
+15626,Fix BreakLoopOp object has no attribute blocks bug,compilation_failure,yes,high,transpilation raised an AttributeError because they have no blocks attribute
+13670,Fix 4-pi periodicity of controlled rotations in the CommutationChecker,output_semantic,yes,high,Computation checker incorrectly treated certain controlled rotations. It can enable unsafe gate reordering which will do  different quantum computation.
+14603,Fix ElidePermutations pass in the presence of PermutationGates,contract_metadata,no,high,the bug made the compiler produce correct circuit but metadata was wrong
+13910,Propagate DAGCircuit.name in ApplyLayout,contract_metadata,no,high,the compiled circuit is same but metadata was lost
+14998,Fix VF2PostLayout with uncoupled qubits in strict_direction=True,contract_metadata,no,high,VF2Layout with uncoupled-qubit metadata caused problems during later reconstruction.
+16285,Fix panic on 1.0 error in VF2Layout,compilation_failure,yes,high,same problem of panic as above. The fix prevent the panic.
+14938,Fix VF2 layout allocation with idle qubits,contract_metadata,no,high,correct applied behavior but metadata problem
+15258,Fix reuse of ConsolidateBlocks instances,compilation_failure,yes,high,the panic exception occurs. Transpilation fails instead of returning a circuit.
+13945,Fix composing virtual permutation layouts for ElidePermutations and StarPreRouting,contract_metadata,no,medium,The PR is clearly saying remaining problem is the incorrect composition of the virtual final-layout metadata
+16428,Correctly combining control modifiers in OptimizeAnnotated,output_semantic,yes,high,OptimizeAnnotated did a problem when nested controlled operations had different control settings.
+13874,Use average gate fidelity in the commutation checker,output_semantic,yes,high,Commutation checker handled a very small-angle gate inconsistently.
+14939,Fix TranspileLayout.initial_index_layout with unordered virtuals,contract_metadata,no,high,again metadata problem
+14041,Fix deepcopy/pickle of DAGCircuit variable IO nodes,contract_metadata,no,low,"When a DAGCircuit was loaded, some output nodes could be incorrectly treated as input nodes. This can damage the circuit’s structure, but there is no evidence that transpilation crashed."
+13790,Do not contract control-flow operations during SabreSwap,output_semantic,yes,high,"SabreSwap removed dependencies that were important.Due to this, transpiled circuit could behave incorrectly."
+14763,Fix non-determinism in CommutativeCancellation,determinism,no,high,CommulativeCancellation process items in random error so circuit graph is different each time. Circuit still worked correctly so issue not cathced.
+15943,Fix TemplateOptimization dropping the global_phase on substitution,global_phase,no,high,Qiskit strict test might detect bug or would dilebertaly ignore it.
+13884,Add 2q fractional gates to the ConsolidateBlocks transpiler pass,circuit_quality,yes,medium,"Before the fix, ConsolidateBlocks could not optimize blocks containing 2-qubit fractional gates effectively. The compiled circuit remained semantically correct, but optimization quality could be worse (e.g., more gates or higher depth), making this a circuit-quality issue rather than a correctness bug"
+16310,Reject loopback edges in CouplingMap,compilation_failure,yes,high,Bad input created the problem. So the fix rejects bad input.
+16337,Fix CommutationChecker for controlled rotation gates,output_semantic,yes,high,circuit changes
+13820,Delegate BasePass.__call__ to PassManager.run,compilation_failure,yes,high,alling ALAPScheduleAnalysis directly on a circuit failed
+14730,Fix non-determinism VF2Layout with only 1q gates,determinism,no,high,"VF2Layout gave different results each time with the same seed. The circuit was  correct, but output was not consistent"
+15875,Fix BasisTranslator processing of nested ControlFlowOp,compilation_failure,yes,medium,BasisTranslator missed converting unsupported gates inside nested control-flow blocks. This could make final circuit fail on Aer.
+14919,Fix composition of final_layout,contract_metadata,no,high,Multiple routing steps produce incorrect metadata though Transpilation still worked correctly.
+14120,Added VF2PostLayout at the end of optimization stage for level 3,circuit_quality,yes,low,Forced classification
+16476,Fix cache and prediction misses in Target::qargs,performance,yes,medium,Target qargs cache/prediction misses increase compile-time work; circuit result is unchanged.
+16409,Accept rotation gate names in CommutationChecker filters,compilation_failure,yes,medium,"Rotation-gate names supplied to the CommutationChecker filter were not accepted, rejecting a valid transpiler configuration."
+16402,Fix incorrect global phase shift for P and U1 gates in CommutativeCancellation,global_phase,no,high,Incorrect phase shift for P/U1 cancellation changes only global phase.
+15147,Fix schedule analysis passes with empty circuits,compilation_failure,yes,high,Schedule-analysis passes fail on an empty circuit.
+15117,Avoid panics in Optimize1qGatesDecomposition,compilation_failure,yes,high,Optimizer panic during Optimize1qGatesDecomposition.
+15074,Fix pickling of SabreSwap,compilation_failure,yes,low,SabreSwap pickling/serialization failure is an API-edge crash rather than a circuit-output defect.
+14978,Un-provide standard_operation for PyGate,output_semantic,yes,medium,Treating a Python-defined gate as a standard operation can route it through the wrong operation representation.
+15131,Check target gates are parameterized in optimize1qgatesdecomposition,compilation_failure,yes,medium,Missing parameterization check can select a target gate that cannot represent the required one-qubit decomposition.
+15110,Raise exception not panic on bad ConsolidateBlocks input,compilation_failure,yes,high,Bad ConsolidateBlocks input caused a panic; the fix replaces it with a controlled exception.
+14405,Read timing constraints from target when no backend is provided,compilation_failure,yes,high,Scheduling with a Target but no backend fails to obtain timing constraints.
+16392,Fix global cache of SynthesizeRZRotations,output_semantic,yes,medium,A global SynthesizeRZRotations cache can reuse stale synthesis state across runs or configurations.
+16237,Fix non-deterministic ConsolidateBlocks output with fixed transpiler seed,determinism,no,high,ConsolidateBlocks produces varying output despite a fixed transpiler seed.
+16215,Preserve global phase in Commuting2qGateRouter,global_phase,no,high,Commuting2qGateRouter did not preserve the circuit global phase.
+16201,Fix excessive global-phase accumulation in UnrollForLoops,global_phase,no,high,UnrollForLoops accumulates global phase incorrectly.
+16163,Fix unsafe symmetric simplification of XXPlusYY in CommutativeOptimization,output_semantic,yes,high,Unsafe symmetric simplification of XXPlusYY can change the circuit unitary.
+16153,Fix cancellation of CS and CSdg in InverseCancellation,circuit_quality,yes,medium,CS and CSdg are inverse operations; failing to cancel them leaves an equivalent but unnecessarily larger circuit.
+16075,Fix forced ConsolidateBlocks decomposition for incomplete bases,compilation_failure,yes,medium,Forced ConsolidateBlocks decomposition against an incomplete basis can leave synthesis unable to produce a valid target decomposition.
+16054,Fix ParameterVector global-phase panic in RemoveIdentityEquivalent,compilation_failure,yes,high,ParameterVector handling triggers a global-phase panic in RemoveIdentityEquivalent.
+16023,Fix commutation checking between two Pauli product measurements,output_semantic,yes,medium,Incorrect commutation handling for Pauli-product measurements can reorder non-interchangeable measurement operations.
+16004,Fix synth_qft_line failure for circuits with 32 or more qubits,compilation_failure,yes,high,synth_qft_line fails for circuits with 32 or more qubits.
+15967,Fix stale best-DAG update in C transpiler optimization level 3,circuit_quality,yes,medium,A stale best-DAG update can return an equivalent but non-best level-3 optimization result.
+15933,Fix matrix-size validation in CommutationChecker,compilation_failure,yes,medium,Invalid matrix sizes need validation in CommutationChecker rather than proceeding into a failure path.
+15781,Fix synth_clifford_depth_lnn for single-qubit Clifford circuits,compilation_failure,yes,high,synth_clifford_depth_lnn fails for the single-qubit Clifford edge case.
+15685,Fix HLS qubit tracking for plugin-generated operations,output_semantic,yes,high,Incorrect qubit tracking for plugin-generated high-level-synthesis operations can apply operations to the wrong qubits.
+15556,Fix zero-length permutation synthesis overflow,compilation_failure,yes,high,Zero-length permutation synthesis causes an arithmetic overflow.
+15401,Fix incorrect argument passed to generate_unroll_3q in Clifford+T transpilation,output_semantic,yes,high,Passing the wrong argument to the three-qubit unroll generator can synthesize an incorrect transformation.
+15286,Respect Target when selecting a non-default UnitarySynthesis plugin,circuit_quality,yes,medium,Ignoring the Target when selecting a non-default synthesis plugin can choose a less appropriate equivalent decomposition.
+15143,Fix control-flow qargs handling in BasisTranslator,output_semantic,yes,high,Incorrect control-flow qarg handling in BasisTranslator can translate operations on the wrong qubits.
+15083,Fix ConsolidateBlocks qubit mapping inside control-flow blocks,output_semantic,yes,high,Incorrect ConsolidateBlocks qubit mapping inside control-flow blocks changes the transformed operation mapping.
+15040,Fix DAG push-edge ordering non-determinism,determinism,no,high,DAG push-edge ordering makes transpiler output non-deterministic.
+15024,Preserve registers through Python Layout to Rust TranspileLayout conversion,contract_metadata,no,high,Registers are lost while converting a Python Layout to Rust TranspileLayout; the layout-applied circuit behavior remains intact.
+14956,Fix global-phase handling in CommutativeCancellation,global_phase,no,high,CommutativeCancellation mishandles global phase.
+14869,Do not run VF2PostLayout when an explicit layout is supplied,contract_metadata,no,medium,Running VF2PostLayout despite an explicit layout violates the requested layout contract while preserving the layout-applied circuit behavior.
+14765,Fix Target.py_instruction_supported behavior,contract_metadata,no,medium,Target.py_instruction_supported reports the wrong support metadata/contract result.
+14670,Fix MCX dirty-ancilla qubit accounting in HLS selection,output_semantic,yes,high,"Incorrect dirty-ancilla accounting can select an MCX realization with invalid ancilla use, affecting circuit behavior."
+14655,"Fix CommutativeInverseCancellation for Clifford, control-flow, and non-invertible operations",output_semantic,yes,high,"CommutativeInverseCancellation can act unsafely around Clifford, control-flow, or non-invertible operations."
+14606,Fix ApplyLayout with empty layout,compilation_failure,yes,high,ApplyLayout fails when given an empty layout.
+14597,Fix HLS classical-bit mapping from control-flow blocks,output_semantic,yes,high,Incorrect classical-bit mapping from control-flow blocks changes how results are written or read.
+14330,Fix alignment checks of stretch variables,compilation_failure,yes,medium,Alignment checking with stretch variables reaches an invalid scheduling/checking path.
+16249,Fix subtraction-underflow panic in ConstrainedReschedule,compilation_failure,yes,high,ConstrainedReschedule hits a subtraction-underflow panic.
+16246,Initialize ConstrainedReschedule.target unconditionally,compilation_failure,yes,high,ConstrainedReschedule can use an uninitialized target and fail.
+16151,Fix ConstrainedReschedule barrier handling,contract_metadata,no,low,Barrier handling affects scheduling constraints/metadata rather than the layout-applied unitary; title alone leaves the exact manifestation borderline.
+16154,Add safe shape checking to synth_cz_depth_line_mr,compilation_failure,yes,high,synth_cz_depth_line_mr needs safe shape validation to avoid an invalid-input failure.
+15137,Fix HighLevelSynthesis for custom gate calibrations,contract_metadata,no,low,Custom gate calibrations are transpiler contract metadata; preserving them does not change the logical output map.

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Helvetica, Arial, sans-serif">
+<rect x="0" y="0" width="1000" height="620" fill="#ffffff"/>
+<defs><marker id="ar" markerWidth="9" markerHeight="9" refX="6.5" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#5B6B86"/></marker></defs>
+<polyline points="500.0,86 255.0,150" fill="none" stroke="#5B6B86" stroke-width="1.6" marker-end="url(#ar)"/>
+<polyline points="500.0,86 745.0,150" fill="none" stroke="#5B6B86" stroke-width="1.6" marker-end="url(#ar)"/>
+<polyline points="255.0,378 341.6,418" fill="none" stroke="#5B6B86" stroke-width="1.6" marker-end="url(#ar)"/>
+<polyline points="745.0,378 658.4,418" fill="none" stroke="#5B6B86" stroke-width="1.6" marker-end="url(#ar)"/>
+<polyline points="500.0,488 500.0,524" fill="none" stroke="#5B6B86" stroke-width="1.6" marker-end="url(#ar)"/>
+<rect x="290" y="20" width="420" height="66" rx="7" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1.4"/>
+<text x="500.0" y="49.6" text-anchor="middle" font-size="14" fill="#2A5A9E" font-weight="bold">ONE PROBLEM</text>
+<text x="500.0" y="67.8" text-anchor="middle" font-size="11.5" fill="#1A2A3A" font-weight="normal">Regression-test the Qiskit transpiler — effectively and within budget</text>
+<rect x="60" y="150" width="390" height="228" rx="7" fill="#D5E8D4" stroke="#82B366" stroke-width="1.4"/>
+<text x="255.0" y="202.9" text-anchor="middle" font-size="14" fill="#1A2A3A" font-weight="bold">EFFECTIVENESS</text>
+<text x="255.0" y="220.8" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">Observability-aware fault detection</text>
+<text x="255.0" y="248.2" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="bold">RQ1  prevalence of the gap</text>
+<text x="255.0" y="265.2" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="bold">RQ2  gap is real and closable</text>
+<text x="255.0" y="292.9" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">Method: mine merged transpiler fixes,</text>
+<text x="255.0" y="308.9" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">fault-class-matched (contract / isolated-pass) oracles</text>
+<text x="255.0" y="336.2" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="bold">Feasibility: demonstrated</text>
+<rect x="550" y="150" width="390" height="228" rx="7" fill="#FFE6CC" stroke="#D79B00" stroke-width="1.4"/>
+<text x="745.0" y="203.4" text-anchor="middle" font-size="14" fill="#1A2A3A" font-weight="bold">COST</text>
+<text x="745.0" y="221.3" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">Budgeted, cost-aware test selection</text>
+<text x="745.0" y="248.7" text-anchor="middle" font-size="12" fill="#B36B00" font-weight="bold">RQ4  selector vs. baselines</text>
+<text x="745.0" y="265.4" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">(including random ordering)</text>
+<text x="745.0" y="292.4" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">Method: transparent risk_score,</text>
+<text x="745.0" y="308.4" text-anchor="middle" font-size="11" fill="#3B475C" font-weight="normal">leakage-safe temporal evaluation</text>
+<text x="745.0" y="335.7" text-anchor="middle" font-size="12" fill="#B36B00" font-weight="bold">Scale-up: powered comparison</text>
+<rect x="140" y="418" width="720" height="70" rx="7" fill="#D5E8D4" stroke="#82B366" stroke-width="1.4"/>
+<text x="500.0" y="449.8" text-anchor="middle" font-size="13" fill="#1A2A3A" font-weight="bold">FOUNDATION — Leakage-safe validity (RQ3)</text>
+<text x="500.0" y="466.9" text-anchor="middle" font-size="10.5" fill="#3B475C" font-weight="normal">cohort separation · provenance control · six executable validity gates · operational soundness</text>
+<rect x="260" y="524" width="480" height="68" rx="7" fill="#DAE8FC" stroke="#6C8EBF" stroke-width="1.4"/>
+<text x="500.0" y="546.5" text-anchor="middle" font-size="13" fill="#2A5A9E" font-weight="bold">CONCLUSION</text>
+<text x="500.0" y="563.9" text-anchor="middle" font-size="11" fill="#1A2A3A" font-weight="normal">The observability gap is real, common, and closable, and the</text>
+<text x="500.0" y="579.9" text-anchor="middle" font-size="11" fill="#1A2A3A" font-weight="normal">methodology is realisable and evaluated honestly.</text>
+</svg>

@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: cart
+Version: 0.0.0
+Summary: Cost-aware regression testing for Qiskit transpilation (research prototype)
+Requires-Python: >=3.9
+License-File: LICENSE
+Dynamic: license-file

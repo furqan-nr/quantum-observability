@@ -1,0 +1,4 @@
+# Per-event RNG seeds (METHODOLOGY §4.2: same seed -> identical ranking).
+# Record one seed per event_id. global_seed is the fallback for any unlisted event.
+global_seed: 20260625
+events: {}   # event_id: seed  (populated as events are added in Phase 1)

@@ -1,0 +1,47 @@
+# Pass-stage mapping artifact (METHODOLOGY §4.4)
+# Maps Qiskit module/path prefixes -> canonical transpiler stages.
+# Used two ways:
+#   (a) change_stage_match: changed source file path -> stage
+#   (b) executed-pass classification: a pass's __module__ -> stage
+# Both use the same prefixes (path "/" and module "." are normalized to "/").
+#
+# Canonical stages (fixed set):
+#   layout, routing, translation, optimization, scheduling, analysis,
+#   passmanager_global, shared_utility_unknown
+#
+# Rules:
+# - Longest-prefix match wins.
+# - passmanager_global and shared_utility_unknown route changes to the §4.2 exploration
+#   reserve rather than concentrating change_stage_match on a single stage.
+#
+# VERIFIED against Qiskit 2.4.2 executed-pass module paths (introspection, 2026-06-25);
+# routing/scheduling prefixes included for completeness (present in the package).
+
+version: 1
+frozen: true            # METHODOLOGY §4.4: frozen before held-out eval; refine on training events only, bump version
+qiskit_anchor: "2.4.2"
+canonical_stages:
+  - layout
+  - routing
+  - translation
+  - optimization
+  - scheduling
+  - analysis
+  - passmanager_global
+  - shared_utility_unknown
+
+# prefix -> canonical stage  (paths normalized: "." -> "/")
+prefixes:
+  "qiskit/transpiler/passes/layout/": layout
+  "qiskit/transpiler/passes/routing/": routing
+  "qiskit/transpiler/passes/basis/": translation
+  "qiskit/transpiler/passes/synthesis/": translation
+  "qiskit/transpiler/passes/optimization/": optimization
+  "qiskit/transpiler/passes/scheduling/": scheduling
+  "qiskit/transpiler/passes/analysis/": analysis
+  "qiskit/transpiler/passes/utils/": analysis        # check/contains/gates-in-basis: analysis-like
+  "qiskit/transpiler/preset_passmanagers/": passmanager_global
+  "qiskit/transpiler/passmanager": passmanager_global
+
+# Anything unmatched falls back to:
+default_stage: shared_utility_unknown

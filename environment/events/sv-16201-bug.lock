@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "sv-16201-bug",
+  "requested": "2b4c81d4a8de182376eca71195474d86af7e7b33^",
+  "resolved_sha": "9eb2467be0784a3a8b486d8b32dddad274901643",
+  "qiskit_version": "2.5.0.dev0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

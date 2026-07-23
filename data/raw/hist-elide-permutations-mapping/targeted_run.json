@@ -1,0 +1,18 @@
+{
+  "event_id": "hist-elide-permutations-mapping",
+  "records": [
+    {
+      "divergence": "asymmetric_error",
+      "error_side": "candidate",
+      "event_id": "hist-elide-permutations-mapping",
+      "fault_id_detected": "qiskit-pr-14603-elide-permutations",
+      "isolated_pass": "ElidePermutations",
+      "label": "contract_metadata_fail",
+      "oracle_type": "contract",
+      "test_id": "trig-h1-elide-permutations",
+      "test_origin": "targeted_regression_trigger",
+      "track": "secondary_retrospective"
+    }
+  ],
+  "schema": "targeted_run/v1"
+}

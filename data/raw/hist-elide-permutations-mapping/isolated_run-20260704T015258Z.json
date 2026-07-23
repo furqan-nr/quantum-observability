@@ -1,0 +1,13 @@
+{
+  "schema": "isolated_run/v1",
+  "event_id": "hist-elide-permutations-mapping",
+  "pass": "ElidePermutations",
+  "trigger": "trig-h1-elide-permutations",
+  "asymmetric_error": {
+    "side": "candidate(buggy)",
+    "error_type": "KeyError",
+    "error": "<Qubit register=(5, \"q\"), index=2>"
+  },
+  "baseline_status": "ok",
+  "candidate_status": "error"
+}

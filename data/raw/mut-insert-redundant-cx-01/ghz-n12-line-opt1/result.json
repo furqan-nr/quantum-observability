@@ -1,0 +1,143 @@
+{
+  "baseline_profile": {
+    "cpu_time_s": 0.0,
+    "executed_pass_modules": [
+      "qiskit.transpiler.passes.utils.contains_instruction",
+      "qiskit.transpiler.passes.synthesis.unitary_synthesis",
+      "qiskit.transpiler.passes.synthesis.high_level_synthesis",
+      "qiskit.transpiler.passes.basis.basis_translator",
+      "qiskit.transpiler.passes.optimization.inverse_cancellation",
+      "qiskit.transpiler.passes.optimization.contract_idle_wires_in_control_flow",
+      "qiskit.transpiler.passes.layout.set_layout",
+      "qiskit.transpiler.passes.layout.trivial_layout",
+      "qiskit.transpiler.passes.utils.check_map",
+      "qiskit.transpiler.passes.layout.full_ancilla_allocation",
+      "qiskit.transpiler.passes.layout.enlarge_with_ancilla",
+      "qiskit.transpiler.passes.layout.apply_layout",
+      "qiskit.transpiler.passes.utils.check_map",
+      "qiskit.transpiler.passes.utils.filter_op_nodes",
+      "qiskit.transpiler.passes.synthesis.unitary_synthesis",
+      "qiskit.transpiler.passes.synthesis.high_level_synthesis",
+      "qiskit.transpiler.passes.basis.basis_translator",
+      "qiskit.transpiler.passes.analysis.size",
+      "qiskit.transpiler.passes.analysis.depth",
+      "qiskit.transpiler.passes.utils.fixed_point",
+      "qiskit.transpiler.passes.utils.fixed_point",
+      "qiskit.transpiler.passes.optimization.optimize_1q_decomposition",
+      "qiskit.transpiler.passes.optimization.inverse_cancellation",
+      "qiskit.transpiler.passes.optimization.contract_idle_wires_in_control_flow",
+      "qiskit.transpiler.passes.utils.gates_basis",
+      "qiskit.transpiler.passes.analysis.size",
+      "qiskit.transpiler.passes.analysis.depth",
+      "qiskit.transpiler.passes.utils.fixed_point",
+      "qiskit.transpiler.passes.utils.fixed_point",
+      "qiskit.transpiler.passes.utils.contains_instruction"
+    ],
+    "executed_pass_stages": [
+      "analysis",
+      "translation",
+      "optimization",
+      "layout"
+    ],
+    "executed_passes": [
+      "ContainsInstruction",
+      "UnitarySynthesis",
+      "HighLevelSynthesis",
+      "BasisTranslator",
+      "InverseCancellation",
+      "ContractIdleWiresInControlFlow",
+      "SetLayout",
+      "TrivialLayout",
+      "CheckMap",
+      "FullAncillaAllocation",
+      "EnlargeWithAncilla",
+      "ApplyLayout",
+      "CheckMap",
+      "FilterOpNodes",
+      "UnitarySynthesis",
+      "HighLevelSynthesis",
+      "BasisTranslator",
+      "Size",
+      "Depth",
+      "FixedPoint",
+      "FixedPoint",
+      "Optimize1qGatesDecomposition",
+      "InverseCancellation",
+      "ContractIdleWiresInControlFlow",
+      "GatesInBasis",
+      "Size",
+      "Depth",
+      "FixedPoint",
+      "FixedPoint",
+      "ContainsInstruction"
+    ],
+    "out_depth": 14,
+    "out_size": 14,
+    "peak_memory_mb": 0.015265464782714844,
+    "routing_observations": {
+      "final_layout_present": true,
+      "in_2q_gates": 11,
+      "out_2q_gates": 11,
+      "out_op_counts": {
+        "cx": 11,
+        "rz": 2,
+        "sx": 1
+      },
+      "swaps_inserted_estimate": 0
+    },
+    "transpilation_time_s": 0.005680499991285615
+  },
+  "baseline_sha": "5a1cf3159aedad954767956d6a5c81a06d043d71",
+  "candidate_sha": "5a1cf3159aedad954767956d6a5c81a06d043d71",
+  "confirmed": true,
+  "cpu_time_s": 0.0,
+  "delta_2q": 2,
+  "delta_depth": 0,
+  "details": {
+    "oracle": {
+      "method": "operator_equiv_modulo_phase"
+    },
+    "performance": {
+      "details": {
+        "n_baseline": 3,
+        "n_candidate": 3
+      },
+      "exploratory": true,
+      "median_baseline_s": 0.0015619000041624531,
+      "median_candidate_s": 0.0013550000003306195,
+      "slowdown_ratio": -0.13246686937732663,
+      "suspected_regression": false,
+      "threshold": 0.2
+    },
+    "quality": {
+      "baseline_2q": 11,
+      "baseline_depth": 14,
+      "candidate_2q": 13,
+      "candidate_depth": 14,
+      "delta_2q": 2,
+      "delta_depth": 0,
+      "details": {
+        "tau_2q": 0.1,
+        "tau_2q_improve": 0.1,
+        "tau_depth": 0.1,
+        "tau_depth_improve": 0.1
+      },
+      "is_regression": true,
+      "rel_2q": 0.18181818181818182,
+      "rel_depth": 0.0,
+      "rule_fired": "rule1_2q_worse"
+    }
+  },
+  "event_environment_id": "smoke-2_4_2",
+  "event_id": "mut-insert-redundant-cx-01",
+  "fault_id_detected": "mut-insert_redundant_cx_pair-01",
+  "label": "quality_regression",
+  "oracle_cost_s": 8.507016199990176,
+  "oracle_equivalent": true,
+  "oracle_strength": "exact",
+  "schema": "ground_truth_result/v1",
+  "suspected_perf_regression": false,
+  "test_id": "ghz-n12-line-opt1",
+  "total_cost_s": 8.507016199990176,
+  "transpilation_time_s": 0.005680499991285615
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+cart = cart.cli:main

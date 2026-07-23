@@ -1,0 +1,62 @@
+{
+  "event_id": "hist-elide-permutations-mapping",
+  "records": [
+    {
+      "baseline_qiskit": "2.2.0",
+      "candidate_qiskit": "2.2.0",
+      "delta_2q": 0,
+      "delta_depth": 0,
+      "evaluation_cohort": "fix_boundary",
+      "event_id": "hist-elide-permutations-mapping",
+      "fault_id_detected": null,
+      "label": "pass",
+      "oracle_equivalent": true,
+      "oracle_strength": "exact",
+      "suspected_perf_regression": false,
+      "test_id": "ghz-n5-line-opt1"
+    },
+    {
+      "baseline_qiskit": "2.2.0",
+      "candidate_qiskit": "2.2.0",
+      "delta_2q": 0,
+      "delta_depth": 0,
+      "evaluation_cohort": "fix_boundary",
+      "event_id": "hist-elide-permutations-mapping",
+      "fault_id_detected": null,
+      "label": "pass",
+      "oracle_equivalent": true,
+      "oracle_strength": "exact",
+      "suspected_perf_regression": false,
+      "test_id": "ghz-n5-line-opt3"
+    },
+    {
+      "baseline_qiskit": "2.2.0",
+      "candidate_qiskit": "2.2.0",
+      "delta_2q": 0,
+      "delta_depth": 0,
+      "evaluation_cohort": "fix_boundary",
+      "event_id": "hist-elide-permutations-mapping",
+      "fault_id_detected": null,
+      "label": "pass",
+      "oracle_equivalent": null,
+      "oracle_strength": "structural",
+      "suspected_perf_regression": false,
+      "test_id": "ghz-n5-heavy_hex-opt1"
+    },
+    {
+      "baseline_qiskit": "2.2.0",
+      "candidate_qiskit": "2.2.0",
+      "delta_2q": 0,
+      "delta_depth": 0,
+      "evaluation_cohort": "fix_boundary",
+      "event_id": "hist-elide-permutations-mapping",
+      "fault_id_detected": null,
+      "label": "pass",
+      "oracle_equivalent": null,
+      "oracle_strength": "structural",
+      "suspected_perf_regression": false,
+      "test_id": "ghz-n5-heavy_hex-opt3"
+    }
+  ],
+  "schema": "historical_run/v1"
+}

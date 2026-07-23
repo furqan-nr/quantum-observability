@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cart"
+version = "0.0.0"
+description = "Cost-aware regression testing for Qiskit transpilation (research prototype)"
+requires-python = ">=3.9"
+# Runtime deps are NOT pinned here. The harness lock is environment/requirements.lock
+# (generated in E1); Qiskit-under-test is built per event. See METHODOLOGY.md §0.1.
+dependencies = []
+
+[project.scripts]
+cart = "cart.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

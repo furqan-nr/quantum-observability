@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "hist-elide-14603-cand",
+  "requested": "7c3890da097c851876b86453a1da6ee7d3208048",
+  "resolved_sha": "7c3890da097c851876b86453a1da6ee7d3208048",
+  "qiskit_version": "2.2.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

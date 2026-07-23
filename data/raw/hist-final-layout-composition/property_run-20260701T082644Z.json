@@ -1,0 +1,66 @@
+{
+  "schema": "property_run/v1",
+  "event_id": "hist-final-layout-composition",
+  "oracle": "property_layout",
+  "track": "secondary_retrospective",
+  "rows": [
+    {
+      "unit": "trig-h2-final-layout-composition-line-opt3",
+      "equivalent": true,
+      "divergent_fields": [],
+      "details": {
+        "compared_fields": [
+          "routing_permutation",
+          "final_index_layout",
+          "initial_index_layout"
+        ],
+        "baseline": {
+          "routing_permutation": [
+            0,
+            1,
+            3,
+            2,
+            4
+          ],
+          "final_index_layout": [
+            3,
+            2,
+            1,
+            4,
+            0
+          ],
+          "initial_index_layout": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ]
+        },
+        "candidate": {
+          "routing_permutation": [
+            0,
+            1,
+            3,
+            2,
+            4
+          ],
+          "final_index_layout": [
+            3,
+            2,
+            1,
+            4,
+            0
+          ],
+          "initial_index_layout": [
+            2,
+            3,
+            1,
+            4,
+            0
+          ]
+        }
+      }
+    }
+  ]
+}

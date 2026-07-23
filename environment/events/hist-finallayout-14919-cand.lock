@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "hist-finallayout-14919-cand",
+  "requested": "14df5941a5915a2b517cdf9bc014a6838e752f92",
+  "resolved_sha": "14df5941a5915a2b517cdf9bc014a6838e752f92",
+  "qiskit_version": "2.2.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

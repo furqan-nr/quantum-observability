@@ -1,0 +1,25 @@
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+.venv*/
+venv/
+environment/_builds/
+build/
+target/
+*.so
+*.pyd
+.DS_Store
+.ipynb_checkpoints/
+GSC files/
+preparation/
+Candidate*.docx
+*.skill
+SCALEUP_PROTOCOLS.md
+FORWARD_REGRESSION_PLAN.md
+REVISION_TODO.md
+PROJECT_PLAN.md
+RELEASE_WINDOW_DECISION.md
+VERSION_1.md
+_PAPER1_README.md
+P1_P3_RUNBOOK.md

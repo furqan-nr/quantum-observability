@@ -1,0 +1,149 @@
+{
+  "schema": "perf_stage2/v1",
+  "event_id": "hist-vf2postlayout-noop",
+  "metric": "wall",
+  "pre_declared": {
+    "slowdown_threshold": 0.2,
+    "min_effect_magnitude": "small",
+    "repeats": 7,
+    "n_bootstrap": 2000,
+    "alpha": 0.05
+  },
+  "rows": [
+    {
+      "unit": "ghz-n16-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.002009,
+        "median_candidate_s": 0.00577,
+        "slowdown_ratio": 1.8718,
+        "ratio_ci_lo": 1.339,
+        "ratio_ci_hi": 1.9986,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 7,
+        "n_candidate": 7,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.0034388999920338392,
+        0.0020942999981343746,
+        0.0020091000478714705,
+        0.002376599994022399,
+        0.0019970000139437616,
+        0.0019557999912649393,
+        0.0019640999962575734
+      ],
+      "candidate_times_s": [
+        0.007072500011418015,
+        0.0058895000256598,
+        0.00550570001360029,
+        0.005412600003182888,
+        0.005558800010476261,
+        0.005901099997572601,
+        0.005769799987319857
+      ]
+    },
+    {
+      "unit": "ghz-n20-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.003249,
+        "median_candidate_s": 0.319289,
+        "slowdown_ratio": 97.2789,
+        "ratio_ci_lo": 79.7826,
+        "ratio_ci_hi": 105.6426,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 7,
+        "n_candidate": 7,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.0050755999982357025,
+        0.003841000027023256,
+        0.0031432000105269253,
+        0.0032487999997101724,
+        0.003083699964918196,
+        0.0032618999830447137,
+        0.0030692999716848135
+      ],
+      "candidate_times_s": [
+        0.30229409999446943,
+        0.3064736000378616,
+        0.31028609996428713,
+        0.31928850000258535,
+        0.32504749996587634,
+        0.3351989999646321,
+        0.3551410000072792
+      ]
+    },
+    {
+      "unit": "ghz-n27-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.003701,
+        "median_candidate_s": 1.268736,
+        "slowdown_ratio": 341.846,
+        "ratio_ci_lo": 224.6008,
+        "ratio_ci_hi": 371.3133,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 7,
+        "n_candidate": 7,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.005445300019346178,
+        0.003700600005686283,
+        0.0035582000273279846,
+        0.003675200045108795,
+        0.004328300012275577,
+        0.005375700013246387,
+        0.003479600010905415
+      ],
+      "candidate_times_s": [
+        0.97646800003713,
+        0.952443599991966,
+        1.2338286000303924,
+        1.268735799996648,
+        1.3247651000274345,
+        1.3462730000028387,
+        1.3367449000361376
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "sv-14603-fix",
+  "requested": "96fda18888de4492f37ccdb93faf15dc014c99eb",
+  "resolved_sha": "96fda18888de4492f37ccdb93faf15dc014c99eb",
+  "qiskit_version": "2.2.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}

@@ -1,0 +1,975 @@
+{
+  "schema": "test_manifest_static/v1",
+  "fields": [
+    "test_id",
+    "circuit_family",
+    "n_qubits",
+    "backend_id",
+    "transpiler_config_id",
+    "declared_pass_stages",
+    "oracle_type"
+  ],
+  "n_units": 64,
+  "units": [
+    {
+      "test_id": "ghz-n5-line-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n5-line-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n5-heavy_hex-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n5-heavy_hex-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n8-line-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n8-line-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n8-heavy_hex-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n8-heavy_hex-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n12-line-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n12-line-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n12-heavy_hex-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n12-heavy_hex-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "ghz-n18-line-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "ghz-n18-line-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "ghz-n18-heavy_hex-opt1",
+      "circuit_family": "ghz",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "ghz-n18-heavy_hex-opt3",
+      "circuit_family": "ghz",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qft-n5-line-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n5-line-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n5-heavy_hex-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n5-heavy_hex-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n8-line-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n8-line-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n8-heavy_hex-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n8-heavy_hex-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n12-line-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n12-line-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n12-heavy_hex-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n12-heavy_hex-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qft-n18-line-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qft-n18-line-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qft-n18-heavy_hex-opt1",
+      "circuit_family": "qft",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qft-n18-heavy_hex-opt3",
+      "circuit_family": "qft",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qaoa_linear-n5-line-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n5-line-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n5-heavy_hex-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n5-heavy_hex-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n8-line-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n8-line-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n8-heavy_hex-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n8-heavy_hex-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n12-line-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n12-line-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n12-heavy_hex-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n12-heavy_hex-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "qaoa_linear-n18-line-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qaoa_linear-n18-line-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qaoa_linear-n18-heavy_hex-opt1",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "qaoa_linear-n18-heavy_hex-opt3",
+      "circuit_family": "qaoa_linear",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "random_clifford-n5-line-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n5-line-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 5,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n5-heavy_hex-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n5-heavy_hex-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 5,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n8-line-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n8-line-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 8,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n8-heavy_hex-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n8-heavy_hex-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 8,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n12-line-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n12-line-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 12,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n12-heavy_hex-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n12-heavy_hex-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 12,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "unitary"
+    },
+    {
+      "test_id": "random_clifford-n18-line-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "random_clifford-n18-line-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 18,
+      "backend_id": "line",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "random_clifford-n18-heavy_hex-opt1",
+      "circuit_family": "random_clifford",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt1+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    },
+    {
+      "test_id": "random_clifford-n18-heavy_hex-opt3",
+      "circuit_family": "random_clifford",
+      "n_qubits": 18,
+      "backend_id": "heavy_hex",
+      "transpiler_config_id": "opt3+basis-cx_rz_sx_x",
+      "declared_pass_stages": [
+        "layout",
+        "routing",
+        "translation",
+        "optimization",
+        "analysis"
+      ],
+      "oracle_type": "sampled_sv"
+    }
+  ]
+}

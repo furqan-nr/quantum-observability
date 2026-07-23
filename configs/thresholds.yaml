@@ -1,0 +1,32 @@
+# Pre-declared quality thresholds (METHODOLOGY §2.3).
+# MUST be fixed before held-out evaluation; never tuned on held-out results.
+# Quality regression if either:
+#   1) delta_2q >= tau_2q  AND  depth_improvement < tau_depth_improve
+#   2) delta_depth >= tau_depth  AND  twoq_improvement < tau_2q_improve
+# (Utility-score rule 3 is dropped for the pilot.)
+
+# Relative thresholds (fractions). Conservative starting point; confirm via sensitivity grid.
+tau_2q: 0.10            # +10% two-qubit gate count
+tau_depth: 0.10         # +10% depth
+tau_depth_improve: 0.10 # depth must improve by >=10% to offset 2Q degradation
+tau_2q_improve: 0.10    # 2Q must improve by >=10% to offset depth degradation
+
+# Sensitivity grid (pre-declared); report how labels move across these.
+sensitivity_grid:
+  tau_2q: [0.05, 0.10, 0.20]
+  tau_depth: [0.05, 0.10, 0.20]
+
+# Performance screening (METHODOLOGY §2.5) — exploratory for the pilot.
+performance:
+  stage1_slowdown_threshold: 0.20   # 20% median slowdown flags a suspected regression
+  normalized_load_exclude_above: 0.30
+
+  # Stage-2 multi-run confirmation (scale-up). PRE-DECLARE/FREEZE before measuring H4; do not tune
+  # on the held-out timings. Confirm a regression only if: median slowdown >= slowdown_threshold
+  # AND the bootstrap CI of the slowdown ratio excludes 0 AND Cliff's-delta magnitude >= min floor.
+  stage2:
+    slowdown_threshold: 0.20        # median CPU-time slowdown required to confirm
+    min_effect_magnitude: small     # Cliff's delta floor (Romano thresholds: small/medium/large)
+    repeats: 7                      # timed transpile runs per unit per build
+    n_bootstrap: 2000
+    alpha: 0.05

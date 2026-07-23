@@ -1,0 +1,10 @@
+# Normalize line endings so text files don't show as spuriously "modified" across machines.
+* text=auto eol=lf
+
+# Binary files — never touch these.
+*.png  binary
+*.jpg  binary
+*.pdf  binary
+*.docx binary
+*.qpy  binary
+*.whl  binary

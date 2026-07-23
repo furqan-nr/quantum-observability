@@ -1,0 +1,15 @@
+{
+  "event_id": "hist-vf2layout-determinism-1q",
+  "records": [
+    {
+      "deterministic": true,
+      "event_id": "hist-vf2layout-determinism-1q",
+      "fault_id_detected": null,
+      "label": "pass",
+      "oracle_type": "property",
+      "test_id": "trig-h3-vf2-all-1q",
+      "test_origin": "targeted_regression_trigger"
+    }
+  ],
+  "schema": "targeted_run/v1"
+}

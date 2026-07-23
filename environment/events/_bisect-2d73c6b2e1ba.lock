@@ -1,0 +1,8 @@
+{
+  "event_environment_id": "_bisect-2d73c6b2e1ba",
+  "requested": "2d73c6b2e1bac2b4779c8edc81f6db577fbab89b",
+  "resolved_sha": "2d73c6b2e1bac2b4779c8edc81f6db577fbab89b",
+  "qiskit_version": "2.2.0",
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0"
+}
