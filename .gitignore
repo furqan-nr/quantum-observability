@@ -23,3 +23,34 @@ RELEASE_WINDOW_DECISION.md
 VERSION_1.md
 _PAPER1_README.md
 P1_P3_RUNBOOK.md
+
+# --- backups, scratch, generated previews (not needed for reproducibility) ---
+*_ORIG.*
+*_backup.*
+*.bak
+*.tmp
+*.log
+*~
+~$*
+*_preview.png
+paper/figures/*_ORIG.png
+
+# --- editor / OS / packaging junk ---
+.vscode/
+.idea/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+Thumbs.db
+
+# --- manuscript + figure sources: NOT part of the reproduction artifact ---
+# (these live in the private working copy; GitHub repo is reproduction-only)
+paper/
+diagrams/
+PAPER.docx
+PAPER.pdf
+build_paper.js
+
+# --- paper-supporting research docs: excluded (repo is reproduction-only, per author) ---
+SLR/
+METHODOLOGY.md
