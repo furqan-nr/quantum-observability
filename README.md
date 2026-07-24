@@ -4,7 +4,7 @@ Reproducibility package for the paper **"Oracle Observability of Quantum Transpi
 What Output-Equivalence Oracles Miss — A Cross-SDK Mining Study and a Fault-Class-Matched Oracle
 Family for the Output-Invisible Channels (Qiskit, tket, Cirq)."** (under submission)
 
-- **Repository:** https://github.com/<your-user>/quantum-transpiler-observability  (set on first push)
+- **Repository:** https://github.com/furqan-nr/quantum-observability
 - **Archive (DOI):** to be minted on release (Zenodo)
 - **License:** MIT (see `LICENSE`)
 
@@ -27,11 +27,9 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
   - human worksheets, adjudication sheets, the frozen codebook, and the tket/Cirq cross-SDK worksheets.
 - `data/observability_mining.csv` — the mining dataset.
 - `results/` — write-once raw oracle artifacts (source_validation, contract_differ, retro_detect, bisect).
-- `SLR/` — the pre-registered, PRISMA-based systematic-review protocol and records.
 - `environment/` — pinned harness lockfiles and the per-event from-source Qiskit build recipes.
 - `scripts/` — reproduction entry points.
-- `paper/` — the manuscript (`PAPER.pdf`) and its build source (`build_paper.js`).
-- `diagrams/`, `configs/`, `tests/`.
+- `configs/`, `tests/` — frozen pre-declared configs and the automated test suite.
 
 ## Reproduce the headline results
     # 1. Mining headline: 19/68 = 28% output-invisible, with Cohen's kappa
@@ -52,4 +50,4 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
     python scripts/pull_pr_metadata.py
     #    -> data/mining_validation/pr_characterization_{raw,summary}.csv
 
-See `REPRODUCE.md` and `METHODOLOGY.md` for the full protocol. Citation metadata is in `CITATION.cff`.
+See `REPRODUCE.md` for the full protocol. Citation metadata is in `CITATION.cff`.
