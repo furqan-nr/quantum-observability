@@ -1,7 +1,7 @@
 """cart command-line entrypoints.
 
 Phase 0 is implemented (`manifest`). Later phases are wired incrementally per
-PROJECT_PLAN.md, respecting phase order.
+METHODOLOGY.md, respecting phase order.
 """
 from __future__ import annotations
 
@@ -96,7 +96,7 @@ def main(argv: list[str] | None = None) -> int:
         return _cmd_analyze(args)
     if args.command == "historical-run":
         return _cmd_historical_run(args)
-    raise SystemExit(f"'{args.command}' not implemented yet — see PROJECT_PLAN.md for phase order.")
+    raise SystemExit(f"'{args.command}' not implemented yet — see METHODOLOGY.md for phase order.")
 
 
 def _cmd_analyze(args) -> int:

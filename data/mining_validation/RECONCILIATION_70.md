@@ -49,7 +49,7 @@ Until the human round closes, cite the corpus as **n≈70 (68 analytic), ~28% ou
 1. Human Raters 2 & 3 code `human_worksheet_44_BLINDED.csv` independently (frozen codebook v2, blinded).
 2. Merge with existing labels; run `compute_kappa.py` for combined Cohen's/Fleiss κ + adjudicate disagreements (priority: the 8 `FLAG` rows and every invisible-channel call, esp. 14765 which may cascade to visible).
 3. Recompute the invisible fraction + Wilson CI on the final human-adjudicated n≈68–70.
-4. Propagate the single reconciled number into: `paper/PAPER_DRAFT.md`, `paper/PAPER.docx`, the abstract, RQ1, and the artifact metadata. Replace every stale 26/38% and remove roadmap 34%/15-4-5.
+4. Propagate the single reconciled number into the manuscript (abstract, RQ1) and the artifact metadata. Replace every stale 26/38% and remove roadmap 34%/15-4-5.
 5. Update `MINING_STATUS.md` with the closed number and archive this memo.
 
 ## 7. Files produced

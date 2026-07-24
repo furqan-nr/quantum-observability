@@ -5,7 +5,7 @@ version: "1.2.0"
 date-released: "2026-06-30"
 license: MIT
 type: software
-repository-code: "https://github.com/furqan-nr/quantum-transpiler-regression-testing"
+repository-code: "https://github.com/furqan-nr/quantum-observability"
 keywords:
   - quantum software engineering
   - regression test selection
@@ -15,13 +15,13 @@ keywords:
   - quantum circuit equivalence checking
 abstract: >-
   cart is a research prototype and leakage-safe evaluation framework for the
-  Qiskit transpiler. Its central finding is an oracle-observability gap: a
-  substantial fraction (about 38%) of real transpiler regressions corrupt
-  internal contract/metadata, introduce non-determinism, or drop global phase,
-  and are therefore invisible to output-equivalence oracles. It also provides a
-  fault-manifestation taxonomy, fault-class-matched oracles, and a cost-aware
-  regression-test-selection pilot, in a setting where the oracle must decide
-  circuit equivalence modulo qubit-layout permutation.
+  Qiskit transpiler. Its central finding is an oracle-observability gap: about
+  28% of real transpiler regressions (95% Wilson CI 19-40%) corrupt internal
+  contract/metadata, introduce non-determinism, or drop global phase, and are
+  therefore invisible to output-equivalence oracles. It also provides a
+  fault-manifestation taxonomy and a family of fault-class-matched oracles, in a
+  setting where the oracle must decide circuit equivalence modulo global phase
+  and qubit-layout permutation.
 authors:
   - family-names: Nasir
     given-names: Furqan
@@ -34,13 +34,9 @@ authors:
   - family-names: Alam
     given-names: Iftikhar
     affiliation: "City University of Science and Information Technology (CUSIT), Peshawar, Pakistan"
-identifiers:
-  - type: doi
-    value: "10.5281/zenodo.21020113"
-    description: "Archived snapshot of this software release (v1.1)."
 preferred-citation:
   type: article
-  title: "Oracle Observability of Quantum Transpiler Regressions: What Output-Equivalence Oracles Miss in Qiskit, and a Leakage-Safe, Cost-Aware Regression-Testing Pilot"
+  title: "Oracle Observability of Quantum Transpiler Regressions: What Output-Equivalence Oracles Miss — A Cross-SDK Mining Study and a Fault-Class-Matched Oracle Family for the Output-Invisible Channels (Qiskit, tket, Cirq)"
   authors:
     - family-names: Nasir
       given-names: Furqan

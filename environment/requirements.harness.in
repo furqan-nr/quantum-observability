@@ -27,4 +27,4 @@ pyyaml
 # Build-from-source toolchain for per-event Qiskit (used by E3, documented here)
 setuptools-rust>=1.9
 # NOTE: a Rust toolchain (rustc/cargo) must be present on the build machine.
-# See RELEASE_WINDOW_DECISION.md for the MSRV required by the chosen window.
+# The MSRV follows the chosen Qiskit window (see environment/setup/SETUP.md).

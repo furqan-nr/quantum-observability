@@ -12,7 +12,7 @@ resolution and a single transpile of these circuits sits near that boundary (CPU
 to zeros). Wall-clock has sub-microsecond resolution; multi-run median + bootstrap CI + effect size
 control the extra noise. Use `--metric cpu` to force CPU process time (keep the machine quiet).
 
-Build the per-event venvs first (PowerShell; see FORWARD_REGRESSION_PLAN.md / SETUP_WINDOWS.md):
+Build the per-event venvs first (PowerShell; see environment/setup/SETUP_WINDOWS.md):
   environment/_builds/<env_id>-base/venv   (baseline, good)
   environment/_builds/<env_id>-cand/venv   (candidate, buggy)
 

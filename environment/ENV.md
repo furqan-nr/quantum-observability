@@ -7,7 +7,7 @@ Decisions are locked; machine-specific fields are filled when E1–E4 run on the
 - **Build/instrumentation anchor:** `2.4.2` (verified: instrumentation + oracles, 2026-06-25).
 - **Harness Python:** **3.11** (supported across 2.1–2.4 and by qiskit-aer).
 - **Topology feature:** connectivity pressure (METHODOLOGY §2.4).
-- Rationale: early-2027 publication → current, maintained Qiskit line. See `RELEASE_WINDOW_DECISION.md`.
+- Rationale: early-2027 publication → current, maintained Qiskit line.
 
 ## Harness machine (fill in E1–E2)
 - OS / version:

@@ -1,4 +1,4 @@
-"""Scaffold smoke tests. Real phase tests are added per PROJECT_PLAN.md."""
+"""Scaffold smoke tests. Real phase tests are added per METHODOLOGY.md."""
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]

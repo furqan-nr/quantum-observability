@@ -36,7 +36,7 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 ## 2. Run it all (one command)
 
 ```powershell
-cd C:\Users\furqa\Desktop\Aspire\quantum-transpiler-regression-testing
+cd C:\Users\furqa\Desktop\Aspire\quantum-observability
 .\environment\setup\bootstrap.ps1
 ```
 
@@ -46,7 +46,7 @@ tests.
 
 ### Or step by step
 ```powershell
-cd C:\Users\furqa\Desktop\Aspire\quantum-transpiler-regression-testing
+cd C:\Users\furqa\Desktop\Aspire\quantum-observability
 
 # E1 - pinned harness lock (no Qiskit)
 .\environment\setup\make_harness_lock.ps1

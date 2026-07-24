@@ -21,7 +21,7 @@ rustc --version && cargo --version    # confirm
 
 Open WSL in this project folder:
 ```bash
-cd /mnt/c/Users/furqa/Desktop/Aspire/quantum-transpiler-regression-testing
+cd /mnt/c/Users/furqa/Desktop/Aspire/quantum-observability
 ```
 
 ## 1. E1, build the harness + lockfile

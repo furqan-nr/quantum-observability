@@ -98,7 +98,7 @@ Decision (supervisor-approved): expand the manuscript corpus to the 70-candidate
 - **Preliminary combined: 19/68 = ~28% output-invisible [Wilson 95% CI 19–40%]** (channels:
   contract_metadata 10, global_phase 5, determinism 4). Headline moved DOWN from 38%/46% because the
   new batch is crash/panic-dominated (19 compilation_failure, all visible).
-- Numbers propagated into `paper/PAPER_DRAFT.md`, `paper/build_paper.js`, rebuilt `paper/PAPER.docx`
-  and `paper/PAPER.pdf`. Every stale 26/38% removed; roadmap 34%/15-4-5 not cited.
+- Numbers propagated into the manuscript and its build source (maintained separately). Every stale
+  26/38% removed; roadmap 34%/15-4-5 not cited.
 - **Still open:** independent human coding of the 44 (Raters 2 & 3) → recompute κ + Wilson CI →
   finalize the single number. Priority review: the 8 `FLAG` rows, esp. #14765.

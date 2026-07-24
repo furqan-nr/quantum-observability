@@ -58,7 +58,7 @@ def main(argv=None) -> int:
     bpy = args.baseline_python or _venv_python(f"{ev.event_environment_id}-base")
     cpy = args.candidate_python or _venv_python(f"{ev.event_environment_id}-cand")
     if not bpy or not cpy:
-        raise SystemExit(f"per-event venvs missing for {ev.event_id}; build base/cand first (see FORWARD_REGRESSION_PLAN.md).")
+        raise SystemExit(f"per-event venvs missing for {ev.event_id}; build base/cand first (see environment/setup/SETUP_WINDOWS.md).")
 
     print(f"# H1 isolated-pass differential: {ev.event_id}  (pass={args.pass_name}, trigger={args.trigger})")
     print(f"# baseline(good)={ev.baseline_sha[:12]}  candidate(buggy)={ev.candidate_sha[:12]}\n")
