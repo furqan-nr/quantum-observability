@@ -1,0 +1,161 @@
+{
+  "schema": "perf_stage2/v1",
+  "event_id": "hist-vf2postlayout-noop",
+  "metric": "wall",
+  "pre_declared": {
+    "slowdown_threshold": 0.2,
+    "min_effect_magnitude": "small",
+    "repeats": 9,
+    "n_bootstrap": 2000,
+    "alpha": 0.05
+  },
+  "rows": [
+    {
+      "unit": "ghz-n16-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.001848,
+        "median_candidate_s": 0.004992,
+        "slowdown_ratio": 1.7011,
+        "ratio_ci_lo": 1.5624,
+        "ratio_ci_hi": 1.8366,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 9,
+        "n_candidate": 9,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.0031985000241547823,
+        0.0019174000481143594,
+        0.0018479999853298068,
+        0.001975300023332238,
+        0.0017593000084161758,
+        0.0018333999905735254,
+        0.0018752999603748322,
+        0.0017850999720394611,
+        0.0017843999667093158
+      ],
+      "candidate_times_s": [
+        0.0066275999415665865,
+        0.005070399958640337,
+        0.0049854000099003315,
+        0.004990500048734248,
+        0.005061599891632795,
+        0.004949399968609214,
+        0.005064900033175945,
+        0.00499160005711019,
+        0.004936300101689994
+      ]
+    },
+    {
+      "unit": "ghz-n20-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.003317,
+        "median_candidate_s": 0.297708,
+        "slowdown_ratio": 88.7522,
+        "ratio_ci_lo": 83.6892,
+        "ratio_ci_hi": 98.7976,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 9,
+        "n_candidate": 9,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.0055726999416947365,
+        0.003501500003039837,
+        0.003316999995149672,
+        0.0035152999917045236,
+        0.0032412000000476837,
+        0.003433800069615245,
+        0.0032777999294921756,
+        0.002968300017528236,
+        0.0028354000532999635
+      ],
+      "candidate_times_s": [
+        0.30304390005767345,
+        0.29686310002580285,
+        0.2937281000195071,
+        0.29972300003282726,
+        0.29622929997276515,
+        0.2956702000228688,
+        0.30053490004502237,
+        0.3020174999255687,
+        0.2977080999407917
+      ]
+    },
+    {
+      "unit": "ghz-n27-heavy_hex-opt3",
+      "metric": "wall",
+      "result": {
+        "suspected_regression": true,
+        "median_baseline_s": 0.003,
+        "median_candidate_s": 0.95123,
+        "slowdown_ratio": 316.0449,
+        "ratio_ci_lo": 305.4466,
+        "ratio_ci_hi": 325.7343,
+        "cliffs_delta": 1.0,
+        "cliffs_magnitude": "large",
+        "a12_candidate_slower": 1.0,
+        "threshold": 0.2,
+        "min_magnitude": "small",
+        "n_baseline": 9,
+        "n_candidate": 9,
+        "decision_reason": "confirmed (slowdown >= threshold, CI excludes 0, effect >= floor)",
+        "details": {
+          "n_bootstrap": 2000,
+          "alpha": 0.05,
+          "seed": 1234
+        }
+      },
+      "baseline_qiskit": "2.1.0",
+      "candidate_qiskit": "2.1.0",
+      "baseline_times_s": [
+        0.005045400001108646,
+        0.003133099991828203,
+        0.003015000023879111,
+        0.0030002999119460583,
+        0.002992899972014129,
+        0.0030534000834450126,
+        0.0029635000973939896,
+        0.002938099903985858,
+        0.002952700015157461
+      ],
+      "candidate_times_s": [
+        0.9601278000045568,
+        0.9367316999705508,
+        0.9723956000525504,
+        0.9706525999354199,
+        0.9682770000072196,
+        0.9459167000604793,
+        0.9255742999957874,
+        0.9512297000037506,
+        0.9476456000702456
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ circuits and phase offsets), and measures, on the anchor Qiskit (no from-source 
   * RUNTIME      - median matched-oracle call time (ms);
   * MEMORY       - peak traced memory of a matched-oracle call (KB).
 Contract/metadata-channel sensitivity is reported from the two source-verified real fixes
-(#14603 contract differ, #14919 MR-1); determinism stays an honest limitation.
+(#14603 contract differ, #14919 MR-1); determinism is reproduced separately under a noise-scored target (scripts/determinism_eval.py).
 Run from repo root:  python scripts/channel_matched_eval.py
 Writes results/channel_matched_eval.json and prints the metrics table.
 """
@@ -103,7 +103,7 @@ def main():
             "specificity": round(spec, 3), "specificity_wilson95": wilson(tn, tn + fp)},
         "contract_metadata_channel": {"note": "sensitivity from 2 source-verified real fixes",
             "detected": 2, "of": 2, "fixes": ["#14603 (contract differ)", "#14919 (MR-1)"]},
-        "determinism_channel": {"note": "not reproducible on commodity hardware; reported as a limitation"},
+        "determinism_channel": {"note": "reproduced separately under a noise-scored target; see scripts/determinism_eval.py and results/determinism_eval.json"},
     }
     (ROOT / "results").mkdir(exist_ok=True)
     (ROOT / "results" / "channel_matched_eval.json").write_text(json.dumps({"summary": summary, "rows": rows}, indent=2))
@@ -114,7 +114,7 @@ def main():
     print(f"{'global phase':22s}{str(g['sensitivity'])+' '+str(g['sensitivity_wilson95']):26s}"
           f"{str(s['specificity'])+' '+str(s['specificity_wilson95']):26s}")
     print(f"{'contract/metadata':22s}{'2/2 (real fixes)':26s}{str(s['specificity']):26s}")
-    print(f"{'determinism':22s}{'limitation (not reproduced)':26s}{'-':26s}")
+    print(f"{'determinism':22s}{'reproduced (determinism_eval.py)':26s}{'-':26s}")
     print(f"runtime: median matched-oracle call {g['median_oracle_ms']} ms   "
           f"peak memory {g['peak_memory_kb']} KB   ({g['mutants']} phase mutants, {s['clean_runs']} clean runs)")
     print("wrote results/channel_matched_eval.json")

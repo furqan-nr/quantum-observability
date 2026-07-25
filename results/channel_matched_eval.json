@@ -30,7 +30,7 @@
       ]
     },
     "determinism_channel": {
-      "note": "not reproducible on commodity hardware; reported as a limitation"
+      "note": "reproduced separately under a noise-scored target; see scripts/determinism_eval.py and results/determinism_eval.json"
     }
   },
   "rows": [

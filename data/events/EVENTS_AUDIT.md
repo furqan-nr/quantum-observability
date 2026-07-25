@@ -34,14 +34,14 @@ classified by manifestation channel; ≈ 38% fall in output-invisible channels).
 | event_id | fault_type | candidate (buggy) → baseline (good) | evidence | status |
 |---|---|---|---|---|
 | hist-elide-permutations-mapping | semantic | `7c3890da` → `96fda188` | PR #14603 | **rejected** (production-unobservable) |
-| hist-final-layout-composition | semantic | `14df5941` → `dfcc5c6c` | PR #14919 | blocked |
+| hist-final-layout-composition | contract/metadata | `14df5941` → `dfcc5c6c` | PR #14919 | reproduced |
 | hist-vf2layout-determinism-1q | determinism | `056c6413` → `d33ef533` | PR #14730 | reproduced |
 | hist-vf2layout-panic-1p0 | **functional** | `f0fae6f3` → `0b2cdf2b` | PR #16285 | blocked |
 
 ### forward_regression cohort
 | event_id | fault_type | baseline (good) → candidate (buggy, introduced) | evidence | status |
 |---|---|---|---|---|
-| hist-vf2postlayout-noop | performance | `a18e1516` → `a8d23667` | PR #14120 / issue #14867 | blocked |
+| hist-vf2postlayout-noop | performance | `a18e1516` → `a8d23667` | PR #14120 / issue #14867 | confirmed |
 
 ### mutation cohort (verified, Phase 2)
 `disable_optimization_loop`, `drop_vf2_post_layout`, `downgrade_routing`, `insert_redundant_cx_pair`,
@@ -82,23 +82,29 @@ straddles. Finalize `configs/cutoff.yaml` after historical verification.
   property-level / isolated-pass oracle in a clearly-labelled retrospective track (deviation).
   This is a deliberate rigor outcome: faults the selector could not observe in real CI are not
   credited.
-- **H4 (VF2PostLayout no-op), BLOCKED (perf below threshold).** Built buggy+fixed; all `pass` on
-  4 small units AND on a 16-unit retry (incl. large opt-3 circuits). The no-op overhead stays under
-  the 20% Stage-1 screen; single-sample CPU timing is under-powered vs the 3-run median in §2.5.
-  Exploratory; deferred to Phase 6 (3-run median + controlled hardware).
+- **H4 (VF2PostLayout no-op), CONFIRMED (Stage-2 multi-run).** Built good+buggy from source. The no-op
+  overhead is negligible on the <=8q pilot corpus (below the 20% Stage-1 screen), but a pre-declared
+  Stage-2 protocol (9 repeats, 2000-sample bootstrap CI, alpha=0.05) over a width-extended symmetric regime
+  (GHZ on heavy-hex at opt3) detects it decisively: candidate slowdown ~1.7x (16q), ~89x (20q), ~316x (27q),
+  Cliff's delta=1.0 (complete separation). Runner: `scripts/verify_h4_perf.py`; raw:
+  `data/raw/hist-vf2postlayout-noop/perf_stage2-wall-20260725T022525Z.json`.
 - **H3 (VF2Layout determinism), REPRODUCED (source-verified).** Built buggy+fixed. The fault needs a
   noise-scored target; using the `GenericBackendV2(noise_info=True)` model from the fix's own regression
   test and a fixed `seed_transpiler` across five `PYTHONHASHSEED` values (50 runs per build), the buggy
   parent produces **6 distinct compilations** while the fixed build produces **1**. All six parent
   compilations share one functional fingerprint (sorted statevector probabilities, permutation-invariant),
   so the fault is real fixed-seed non-determinism that is **output-invisible**. Runner: `scripts/determinism_eval.py`.
-- **H2 (final_layout), H5 (functional #16285):** not built/run; H2 expected to share H1's
-  layout-property masking, H5's panic is input-specific.
+- **H2 (final_layout #14919), REPRODUCED (source-verified via MR-1).** Built fix+parent from source. MR-1
+  (append routing_permutation, must recover identity) holds on the fix and is violated on the parent for
+  SabreSwap, LookaheadSwap, and BasicSwap, while the output oracle is blind. Runner: `scripts/verify_14919_routing.py`.
+  **H5 (functional #16285):** not built/run; input-specific panic.
 
 ### Honest synthesis
-Across the historical set, the pilot's production black-box oracles on a laptop verify **0** events
-so far: H1 rejected (property fault, not in the unitary), H3 blocked (oracle too coarse), H4 blocked
-(perf under-powered). The **mutation cohort (9 quality faults) remains the verified backbone.** This
+Across the historical set, the pilot's production black-box oracles on a laptop verify **0** of the output-invisible
+events, which is exactly the observability gap, while the fault-class-matched oracles verify four from source:
+H1 (#14603, isolated-pass asymmetric error), H2 (#14919, MR-1 violation on all three routing passes),
+H3 (#14730, fixed-seed non-determinism), and H4 (#14120, Stage-2 confirmed, ~316x at 27q). The **mutation
+cohort (9 quality faults) remains a complementary backbone.** This
 is itself a credible pilot finding: black-box semantic/perf oracles under-detect real
 internal/property/timing regressions, which motivates (a) the targeted-trigger + retrospective
 design and (b) the Phase-6 scale-up with stronger oracles and controlled-hardware timing. Per the
