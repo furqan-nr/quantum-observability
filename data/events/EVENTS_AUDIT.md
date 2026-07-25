@@ -16,12 +16,11 @@ are in-window dev commits.
   last-good parent`, `candidate = introducing commit`.
 - **`mutation`** (`event_kind=controlled_mutation`): semantics defined by the operator.
 
-## Verification status (honest)
-I cannot build Qiskit from source or run Benchpress here (no Rust; that is your laptop). Historical
-events therefore remain **`blocked`**, SHAs and evidence are pinned, but each is only `verified`
-once its exact source SHAs build locally AND the fault triggers through the planned test/oracle path.
-**H4 also requires local reproduction before counting as verified.** Mutations are `verified`
-in-sandbox (Phase 2).
+## Verification status
+The historical events have been built from source and reproduced on the author's machine. **H1 (#14603)**
+and **H2 (#14919)** are source-verified output-invisible (contract/metadata); **H3 (#14730)** is a reproduced
+fixed-seed non-determinism; **H4 (#14120)** is a confirmed Stage-2 forward-regression (~316x at 27q). **H5
+(#16285)** is not built/run. The mutation cohort is verified in-sandbox (Phase 2).
 
 ## Ledger (14 events: 5 historical + 9 mutation)
 
@@ -108,7 +107,7 @@ cohort (9 quality faults) remains a complementary backbone.** This
 is itself a credible pilot finding: black-box semantic/perf oracles under-detect real
 internal/property/timing regressions, which motivates (a) the targeted-trigger + retrospective
 design and (b) the Phase-6 scale-up with stronger oracles and controlled-hardware timing. Per the
-§5.4 claim-scope rule (0 verified forward-regression events), results stay strictly pilot-scoped.
+§5.4 claim-scope rule (one verified forward-regression event, H4; the contract/metadata, global-phase and determinism cases are retrospective fix-boundary reproductions), headline temporal-generalization claims are withheld.
 
 ### A bug found & fixed during validation
 The H4 `--unit-limit 16` retry crashed: the semantic oracle built a full 2^18 operator (512 GiB) for

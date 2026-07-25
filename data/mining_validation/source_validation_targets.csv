@@ -10,3 +10,4 @@ pr,channel,fix_sha,parent_sha,trigger,family,n,backend,opt,isolated_pass
 16237,determinism,3b9a64fdd4353834d83a6e393a76a2ee657800f2,,,qft,8,line,1,
 15040,determinism,25c3206f0b94c3e1a55e334a050a0d1fd144f996,,,qft,8,line,1,
 14765,contract_metadata,13263654143e625d23a395ca540b006a42dab4a2,,,qft,8,line,1,
+14939,contract_metadata,6fb956f,2577bc1,,qft,8,line,1,
