@@ -86,11 +86,10 @@ def check_contracts(
     # C3 composition (MR-2): final == initial permuted by routing_permutation, when all present
     if (isinstance(init, list) and isinstance(fin, list) and isinstance(rperm, list)
             and not ancilla and _is_perm(init, n) and _is_perm(fin, n) and _is_perm(rperm, n)):
-        composed = [init[rperm[i]] for i in range(n)]
-        composed_alt = [rperm[init[i]] for i in range(n)]
-        if fin != composed and fin != composed_alt:
+        composed = [rperm[init[i]] for i in range(n)]  # Lf = ρ∘L0 (routing after initial), the Qiskit 2.x convention
+        if fin != composed:
             v.append(Violation("layout_composition",
-                               f"final_index_layout={fin} != initial∘routing "
-                               f"({composed} / {composed_alt})"))
+                               f"final_index_layout={fin} != routing∘initial "
+                               f"(expected {composed})"))
 
     return v
