@@ -2,7 +2,7 @@
 
 **Scope:** five channel decisions reviewed after the binary adjudication.
 
-**Protocol:** Codebook v2 is applied top-to-bottom. A documented crash, exception, panic, or rejected input takes precedence over a potential output-quality interpretation. Raw R1, ChatGPT R2, and Mistral R3 labels are unchanged.
+**Protocol:** Codebook v2 is applied top-to-bottom. A documented crash, exception, panic, or rejected input takes precedence over a potential output-quality interpretation. Raw human R1 and R2 labels are unchanged.
 
 | PR | Final channel | Observable | Corpus disposition | Status | Evidence-based decision |
 |---|---|---:|---|---|---|

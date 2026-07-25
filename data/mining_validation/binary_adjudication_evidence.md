@@ -16,4 +16,4 @@
 
 - **14603:** preserved rather than re-labeled. Its current decision relies on the project’s previously recorded built-from-source H1 oracle result, not rater majority.
 - **14041:** is settled as `contract_metadata/no` under the frozen edge-of-scope rule, but stays explicitly low confidence. The source evidence establishes representation corruption, not a compilation failure.
-- The raw R1, ChatGPT R2, and Mistral R3 columns are preserved verbatim in the updated audit CSV.
+- The raw human R1 and R2 labels are preserved verbatim.

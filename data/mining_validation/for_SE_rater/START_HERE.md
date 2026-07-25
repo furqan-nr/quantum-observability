@@ -11,7 +11,7 @@ need a **second independent person** (you) to categorise the same bug-fixes on y
 will be compared to ours to compute an agreement score (Cohen's kappa).
 
 ## The one rule that makes this valuable: do it INDEPENDENTLY
-- Do **not** ask anyone (or ChatGPT/any AI) to label these for you. We specifically need *your own
+- Do **not** ask anyone (or any AI tool) to label these for you. We specifically need *your own
   human judgement* — that is the entire point.
 - Do **not** look for our labels or anyone else's. You are seeing a blank sheet on purpose.
 

@@ -30,7 +30,7 @@ Five distinct fixes were added:
 GitHub's current public PR pages do not consistently show historical `mod: transpiler` or `bug` labels. The five added PRs were selected from official Qiskit release/PR evidence with concrete transpiler or high-level-synthesis defects; this limitation is explicitly recorded in the screening log. PR #15137 is a stable/1.4 HighLevelSynthesis fix and is included under the planned 1.4 extension, with the missing current public `mod: transpiler` badge noted.
 
 ## Rater separation
-Raters 1–3 are human. Rater 4 is the LLM and remains outside the primary human inter-rater agreement analysis.
+The reported inter-rater agreement is computed from the two human coders (see PROVENANCE.md).
 
 ## Integrity check — unchanged human-rater files
 - rater1_sheet.csv: ddb5ae96545bc92acef58758d907c095c440742881e7dbe15a7fd79a22eb0b5f

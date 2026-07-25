@@ -38,6 +38,6 @@ global_phase}**; everything else is output-observable.
 
 ## Rating protocol
 Code the blinded worksheets (`{tket,cirq}_worksheet_BLINDED.csv`) independently (>=2 human raters,
-no LLM labels), fill in_scope_bugfix / manifestation_channel / observable / confidence, adjudicate
+your own judgement), fill in_scope_bugfix / manifestation_channel / observable / confidence, adjudicate
 disagreements against this note, then run `scripts/score_worksheet.py <file>` (add `--rater2 <file2>`
 for Cohen's kappa). Report the pre-adjudication kappa as the reliability, mirroring the Qiskit corpus.
