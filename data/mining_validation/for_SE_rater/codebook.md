@@ -58,7 +58,7 @@ permutation, detect this fault?*
 
 ## Output
 Fill `data/mining_validation/rater2_sheet.csv` (channel, observable, confidence, notes),
-then run `compute_kappa.py` to obtain Cohen's kappa on both judgments. Reconcile any
+then run `../../scripts/score_worksheet.py` to obtain Cohen's kappa on both judgments. Reconcile any
 disagreements in a short adjudication note and report the agreed labels plus kappa.
 
 ---

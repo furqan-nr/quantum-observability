@@ -35,7 +35,7 @@ classified by manifestation channel; ≈ 38% fall in output-invisible channels).
 |---|---|---|---|---|
 | hist-elide-permutations-mapping | semantic | `7c3890da` → `96fda188` | PR #14603 | **rejected** (production-unobservable) |
 | hist-final-layout-composition | semantic | `14df5941` → `dfcc5c6c` | PR #14919 | blocked |
-| hist-vf2layout-determinism-1q | quality | `056c6413` → `d33ef533` | PR #14730 | blocked |
+| hist-vf2layout-determinism-1q | determinism | `056c6413` → `d33ef533` | PR #14730 | reproduced |
 | hist-vf2layout-panic-1p0 | **functional** | `f0fae6f3` → `0b2cdf2b` | PR #16285 | blocked |
 
 ### forward_regression cohort
@@ -86,11 +86,12 @@ straddles. Finalize `configs/cutoff.yaml` after historical verification.
   4 small units AND on a 16-unit retry (incl. large opt-3 circuits). The no-op overhead stays under
   the 20% Stage-1 screen; single-sample CPU timing is under-powered vs the 3-run median in §2.5.
   Exploratory; deferred to Phase 6 (3-run median + controlled hardware).
-- **H3 (VF2Layout determinism), BLOCKED (not reproduced).** Built buggy+fixed. A first determinism
-  oracle (op-counts+depth) passed; a **stronger fingerprint oracle** (gate order + qubit indices +
-  `final_layout`) was then implemented and the buggy build **still passed**. PR #14730's
-  non-determinism is tied to a **noisy `Target`** (`GenericBackendV2` noise scoring) that our
-  coupling-map-only backend does not exercise. Retrospective trigger needs a noisy Target.
+- **H3 (VF2Layout determinism), REPRODUCED (source-verified).** Built buggy+fixed. The fault needs a
+  noise-scored target; using the `GenericBackendV2(noise_info=True)` model from the fix's own regression
+  test and a fixed `seed_transpiler` across five `PYTHONHASHSEED` values (50 runs per build), the buggy
+  parent produces **6 distinct compilations** while the fixed build produces **1**. All six parent
+  compilations share one functional fingerprint (sorted statevector probabilities, permutation-invariant),
+  so the fault is real fixed-seed non-determinism that is **output-invisible**. Runner: `scripts/determinism_eval.py`.
 - **H2 (final_layout), H5 (functional #16285):** not built/run; H2 expected to share H1's
   layout-property masking, H5's panic is input-specific.
 
