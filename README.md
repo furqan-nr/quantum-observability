@@ -25,7 +25,7 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
   - `label_source_validation.csv` — 16 labels source-checked in both directions: 11 primary source validations plus a 5-case symmetric false-negative audit; all 16 agreed with the coded channel.
   - `pr_characterization_raw.csv`, `pr_characterization_summary.csv` — RQ1b metadata (size, latency).
   - human worksheets, adjudication sheets, the frozen codebook, and the tket/Cirq cross-SDK worksheets.
-- `data/observability_mining.csv` — the mining dataset.
+- `data/events/` — the audited 14-event change-event ledger (`events.csv`/`events.json`, kept in sync and checked by `scripts/validate_ledger.py`); bisection-traced forward-regression candidates pending verification live in `PROVENANCE_BACKLOG.md`.
 - `results/` — write-once raw oracle artifacts (source_validation, contract_differ, retro_detect, bisect).
 - `environment/` — pinned harness lockfiles and the per-event from-source Qiskit build recipes.
 - `scripts/` — reproduction entry points.

@@ -25,7 +25,7 @@ data/
   manifest_static/   static test-unit manifest + targeted triggers
   raw/               write-once raw oracle evidence (per event)
   derived/           labels regenerated from raw evidence
-  observability_mining.csv       the mining dataset
+  mining_validation/labels_final_68.csv  canonical 68-fix mining labels (28% output-invisible)
   mining_validation/             final 68-fix labels, human worksheets, the frozen
                                  codebook, adjudication trail, source-validation,
                                  and the tket/Cirq cross-SDK worksheets
