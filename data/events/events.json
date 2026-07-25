@@ -1,6 +1,6 @@
 {
   "schema": "event_table/v1",
-  "n_events": 18,
+  "n_events": 14,
   "events": [
     {
       "event_id": "hist-elide-permutations-mapping",
@@ -110,7 +110,7 @@
       "mutation_family": null,
       "mutation_params": {},
       "notes": "VERIFIED (Stage-2 multi-run): no-op overhead decisively detected by a multi-run wall-clock Stage-2 protocol (pre-declared 20% threshold + Cliff's delta + bootstrap CI) over a width-extended symmetric regime (GHZ on heavy-hex at opt3); median slowdown ~1.7x (16q), ~89x (20q), ~316x (27q), Cliff's delta=1.0, complete sample separation. Single-sample CPU-time Stage-1 on the <=8q corpus stayed below the 20% screen (the original pilot status).",
-      "reproducibility_status": "verified",
+      "reproducibility_status": "confirmed",
       "event_kind": "forward_regression",
       "pair_orientation": "forward",
       "evaluation_cohort": "forward_regression",
@@ -141,7 +141,8 @@
       "event_kind": "fix_boundary_differential",
       "pair_orientation": "reverse_fix_boundary",
       "evaluation_cohort": "fix_boundary",
-      "change_metadata_sha": "0b2cdf2b6a77b050b55fac4e511051c4e4f46519"
+      "change_metadata_sha": "0b2cdf2b6a77b050b55fac4e511051c4e4f46519",
+      "reproducibility_status": "blocked"
     },
     {
       "event_id": "mut-disable-opt-loop-01",
@@ -167,7 +168,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-drop-vf2postlayout-01",
@@ -193,7 +195,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-downgrade-routing-01",
@@ -219,7 +222,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-insert-redundant-cx-01",
@@ -245,7 +249,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-drop-optimization-stage-01",
@@ -271,7 +276,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-force-opt-level-1-01",
@@ -297,7 +303,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-force-opt-level-0-01",
@@ -323,7 +330,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-downgrade-layout-trivial-01",
@@ -349,7 +357,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     },
     {
       "event_id": "mut-insert-redundant-x-01",
@@ -375,121 +384,8 @@
       "event_kind": "controlled_mutation",
       "pair_orientation": "forward",
       "evaluation_cohort": "mutation",
-      "change_metadata_sha": ""
-    },
-    {
-      "event_id": "fwd-elide-14603",
-      "baseline_sha": "c34743a8c12498957a3a4338a7bdd94f7f11ad8b",
-      "candidate_sha": "cbb4d5d54df1c520ec8dbd72ea78a68b2e8642c2",
-      "fault_id": "qiskit-pr-14603-semantic",
-      "fault_source": "historical",
-      "fault_type": "contract_metadata",
-      "event_environment_id": "fwd-elide-14603",
-      "split_group_id": "c34743a8c124",
-      "event_date": "2024-10-03",
-      "train_or_test": "train",
-      "change_metadata": {
-        "kind": "historical",
-        "modified_pass_stages": [
-          "optimization"
-        ],
-        "pr": 14603,
-        "reference": "ElidePermutations mis-remaps PermutationGate qindices (introduced by Rust port #13094, fixed by #14603)"
-      },
-      "mutation_family": null,
-      "mutation_params": {},
-      "notes": "REPRODUCED (retrospective, source-verified): built fix+parent. In the full preset pipeline the output oracle passes and the recorded permutation property shows no divergent field; the buggy ElidePermutations raises an asymmetric error when the pass is run in isolation on the trigger while the fixed pass runs clean. Output-invisible: the production output oracle is blind; caught by the isolated-pass differential. Runner scripts/verify_h1_isolated.py.",
-      "reproducibility_status": "reproduced",
-      "event_kind": "forward_regression",
-      "pair_orientation": "forward",
-      "evaluation_cohort": "forward_regression",
-      "change_metadata_sha": "cbb4d5d54df1c520ec8dbd72ea78a68b2e8642c2",
-      "production_output_oracle_status": "blind",
-      "retrospective_isolated_pass_status": "reproduced"
-    },
-    {
-      "event_id": "fwd-tlayout-registers-15024",
-      "baseline_sha": "e364cd96a98e07be731b05de1c916812033379dc",
-      "candidate_sha": "ccc2c77b000e695a50c81825a83efa032aa5a566",
-      "fault_id": "qiskit-pr-15024-semantic",
-      "fault_source": "historical",
-      "fault_type": "semantic",
-      "event_environment_id": "fwd-tlayout-15024",
-      "split_group_id": "e364cd96a98e",
-      "event_date": "2025-08-14",
-      "train_or_test": "train",
-      "change_metadata": {
-        "kind": "historical",
-        "modified_pass_stages": [
-          "layout"
-        ],
-        "pr": 15024,
-        "reference": "Registers dropped in Rust TranspileLayout round-trip (introduced by #14778, fixed by #15024); contract/metadata channel"
-      },
-      "mutation_family": null,
-      "mutation_params": {},
-      "notes": "Forward regression candidate (PR #15024); verify locally by building base/cand and running the matching oracle. Pending verification.",
-      "reproducibility_status": "blocked",
-      "event_kind": "forward_regression",
-      "pair_orientation": "forward",
-      "evaluation_cohort": "forward_regression",
-      "change_metadata_sha": "ccc2c77b000e695a50c81825a83efa032aa5a566"
-    },
-    {
-      "event_id": "fwd-pr16215",
-      "baseline_sha": "a241dd19a81e8e0fa7a6836a1db6c2de5e6646e6",
-      "candidate_sha": "f2f85a9476e3a5c07321520bb90914d5e619ac3d",
-      "fault_id": "qiskit-pr-16215-semantic",
-      "fault_source": "historical",
-      "fault_type": "semantic",
-      "event_environment_id": "fwd-pr16215",
-      "split_group_id": "a241dd19a81e",
-      "event_date": "2026-05-21",
-      "train_or_test": "test",
-      "change_metadata": {
-        "kind": "historical",
-        "modified_pass_stages": [
-          "optimization"
-        ],
-        "pr": 16215,
-        "reference": "global_phase channel (output-invisible); fixed in PR #16215"
-      },
-      "mutation_family": null,
-      "mutation_params": {},
-      "notes": "Forward regression candidate (PR #16215); verify locally by building base/cand and running the matching oracle. Pending verification.",
-      "reproducibility_status": "blocked",
-      "event_kind": "forward_regression",
-      "pair_orientation": "forward",
-      "evaluation_cohort": "forward_regression",
-      "change_metadata_sha": "f2f85a9476e3a5c07321520bb90914d5e619ac3d"
-    },
-    {
-      "event_id": "fwd-pr14919",
-      "baseline_sha": "090b2b193d6de88017e26d99c0ac379b85382395",
-      "candidate_sha": "df59ab0c630f8106139c95d1c3b217d329579f0c",
-      "fault_id": "qiskit-pr-14919-semantic",
-      "fault_source": "historical",
-      "fault_type": "contract_metadata",
-      "event_environment_id": "fwd-pr14919",
-      "split_group_id": "090b2b193d6d",
-      "event_date": "2024-03-27",
-      "train_or_test": "train",
-      "change_metadata": {
-        "kind": "historical",
-        "modified_pass_stages": [
-          "routing"
-        ],
-        "pr": 14919,
-        "reference": "contract_metadata channel (output-invisible): backwards final_layout composition introduced by PR #11399, fixed by #14919"
-      },
-      "mutation_family": null,
-      "mutation_params": {},
-      "notes": "Forward regression candidate (PR #14919); verify locally by building base/cand and running the matching oracle. Pending verification.",
-      "reproducibility_status": "blocked",
-      "event_kind": "forward_regression",
-      "pair_orientation": "forward",
-      "evaluation_cohort": "forward_regression",
-      "change_metadata_sha": "df59ab0c630f8106139c95d1c3b217d329579f0c"
+      "change_metadata_sha": "",
+      "reproducibility_status": "verified"
     }
   ]
 }

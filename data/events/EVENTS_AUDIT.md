@@ -1,8 +1,10 @@
 # Events Audit, Pilot Ledger (reconciled)
 
-Audited event ledger for the micro corpus, reconciled to the approved decisions. Machine-readable:
-`data/events/events.csv` and `data/events/events.json`. Provenance backlog:
-`data/events/PROVENANCE_BACKLOG.md`. METHODOLOGY.md is unchanged.
+Audited event ledger for the micro corpus, reconciled to one canonical source. Machine-readable:
+`data/events/events.csv` and `data/events/events.json` (both **14 events**; validated equal by
+`scripts/validate_ledger.py`). Bisection-traced forward-regression candidates that are not yet
+forward-verified live in `data/events/PROVENANCE_BACKLOG.md`, outside this ledger. METHODOLOGY.md is
+unchanged.
 
 Release window: Qiskit 2.x (band 2.1 → latest stable; anchor `2.4.2`). All historical candidates
 are in-window dev commits.
@@ -18,24 +20,24 @@ are in-window dev commits.
 
 ## Verification status
 The historical events have been built from source and reproduced on the author's machine. **H1 (#14603)**
-and **H2 (#14919)** are source-verified output-invisible (contract/metadata); **H3 (#14730)** is a reproduced
-fixed-seed non-determinism; **H4 (#14120)** is a confirmed Stage-2 forward-regression (~316x at 27q). **H5
-(#16285)** is not built/run. The mutation cohort is verified in-sandbox (Phase 2).
+and **H2 (#14919)** are source-evidenced output-invisible contract/metadata regressions; **H3 (#14730)**
+is a reproduced fixed-seed non-determinism; **H4 (#14120)** is the one confirmed Stage-2 forward-regression
+(~316x at 27q). **H5 (#16285)** is not built/run. The mutation cohort is verified in-sandbox (Phase 2).
 
 ## Ledger (14 events: 5 historical + 9 mutation)
 
 *EMSE expansion:* the mutation cohort was expanded from 4 to 9 operators (and the corpus width-capped
-at ≤ 8 qubits, 32 units) to give the selection comparison statistical footing. See also the
-repository-mining observability dataset `data/observability_mining.csv` (26 real transpiler bug-fixes
-classified by manifestation channel; ≈ 38% fall in output-invisible channels).
+at ≤ 8 qubits, 32 units) to give the selection comparison statistical footing. The repository-mining
+corpus is `data/mining_validation/labels_final_68.csv` (68 in-scope transpiler bug-fixes; 19/68 ≈ 28%
+output-invisible, 95% Wilson CI 19–40%).
 
 ### fix_boundary cohort
 | event_id | fault_type | candidate (buggy) → baseline (good) | evidence | status |
 |---|---|---|---|---|
-| hist-elide-permutations-mapping | semantic | `7c3890da` → `96fda188` | PR #14603 | **rejected** (production-unobservable) |
-| hist-final-layout-composition | contract/metadata | `14df5941` → `dfcc5c6c` | PR #14919 | reproduced |
+| hist-elide-permutations-mapping | contract/metadata | `7c3890da` → `96fda188` | PR #14603 | **reproduced** (retrospective; isolated-pass exception differential) |
+| hist-final-layout-composition | contract/metadata | `14df5941` → `dfcc5c6c` | PR #14919 | reproduced (MR-1) |
 | hist-vf2layout-determinism-1q | determinism | `056c6413` → `d33ef533` | PR #14730 | reproduced |
-| hist-vf2layout-panic-1p0 | **functional** | `f0fae6f3` → `0b2cdf2b` | PR #16285 | blocked |
+| hist-vf2layout-panic-1p0 | **functional** | `f0fae6f3` → `0b2cdf2b` | PR #16285 | blocked (not run) |
 
 ### forward_regression cohort
 | event_id | fault_type | baseline (good) → candidate (buggy, introduced) | evidence | status |
@@ -59,55 +61,58 @@ translation stage cannot express 1q gates and transpilation fails with a natural
 (all pilot families). Oracle evidence: the engine records the natural exception as `functional_fail`.
 
 ## Fault-type coverage
-| Reported group | fault_type | historical | mutation |
+| Reported channel | fault_type | historical | mutation |
 |---|---|---|---|
-| Correctness | semantic | H1, H2 |, |
-| Correctness | functional | H5 (#16285) | fallback only |
-| Quality | quality | H3 | 9 mutations |
-| Performance | performance | H4 |, |
+| Contract/metadata (output-invisible) | contract_metadata | H1, H2 | — |
+| Determinism (output-invisible) | determinism | H3 | — |
+| Compilation failure | functional | H5 (#16285) | fallback only |
+| Quality | quality | — | 9 mutations |
+| Performance | performance | H4 | — |
 
-All four fault types covered. Total **14 events** (5 historical + 9 mutation).
+All channels covered. Total **14 events** (5 historical + 9 mutation).
 
 ## Temporal split (illustrative, cutoff 2026-01-01)
 train: H1, H2, H3, H4 (2025). test: H5 (2026-05-27), 9 mutations (2026-06). Group-level; no group
 straddles. Finalize `configs/cutoff.yaml` after historical verification.
 
 ## Local validation results (so far)
-- **H1 (ElidePermutations), REJECTED (production-unobservable).** Built buggy+fixed from source;
-  the targeted trigger returned `pass` on the buggy candidate through the full preset PM + semantic
-  oracle (backends `none` and `line`, opt3). The fault corrupts the `virtual_permutation_layout`
-  *property*, not the layout-applied output unitary, so the black-box production oracle cannot see
-  it. Per the production-pipeline rule it is **not counted**; moved to the backlog for a possible
-  property-level / isolated-pass oracle in a clearly-labelled retrospective track (deviation).
-  This is a deliberate rigor outcome: faults the selector could not observe in real CI are not
-  credited.
+- **H1 (ElidePermutations), REPRODUCED (retrospective, source-evidenced).** Built buggy+fixed from
+  source. The targeted trigger returns `pass` on the buggy candidate through the full preset PM +
+  semantic output oracle (backends `none` and `line`, opt3), and the full-pipeline property
+  comparison shows no divergent field, because the fault corrupts the recorded permutation metadata
+  rather than the layout-applied output unitary. It is recovered retrospectively by an **isolated-pass
+  exception differential**: run in isolation, the buggy `ElidePermutations` raises where the fixed
+  pass runs clean. The fault is therefore real but output-invisible to the production output oracle,
+  and is reported in the Secondary retrospective track (never the Primary CI claim). Runner:
+  `scripts/verify_h1_isolated.py`.
 - **H4 (VF2PostLayout no-op), CONFIRMED (Stage-2 multi-run).** Built good+buggy from source. The no-op
   overhead is negligible on the <=8q pilot corpus (below the 20% Stage-1 screen), but a pre-declared
   Stage-2 protocol (9 repeats, 2000-sample bootstrap CI, alpha=0.05) over a width-extended symmetric regime
   (GHZ on heavy-hex at opt3) detects it decisively: candidate slowdown ~1.7x (16q), ~89x (20q), ~316x (27q),
   Cliff's delta=1.0 (complete separation). Runner: `scripts/verify_h4_perf.py`; raw:
   `data/raw/hist-vf2postlayout-noop/perf_stage2-wall-20260725T022525Z.json`.
-- **H3 (VF2Layout determinism), REPRODUCED (source-verified).** Built buggy+fixed. The fault needs a
+- **H3 (VF2Layout determinism), REPRODUCED (source-evidenced).** Built buggy+fixed. The fault needs a
   noise-scored target; using the `GenericBackendV2(noise_info=True)` model from the fix's own regression
   test and a fixed `seed_transpiler` across five `PYTHONHASHSEED` values (50 runs per build), the buggy
   parent produces **6 distinct compilations** while the fixed build produces **1**. All six parent
   compilations share one functional fingerprint (sorted statevector probabilities, permutation-invariant),
   so the fault is real fixed-seed non-determinism that is **output-invisible**. Runner: `scripts/determinism_eval.py`.
-- **H2 (final_layout #14919), REPRODUCED (source-verified via MR-1).** Built fix+parent from source. MR-1
+- **H2 (final_layout #14919), REPRODUCED (source-evidenced via MR-1).** Built fix+parent from source. MR-1
   (append routing_permutation, must recover identity) holds on the fix and is violated on the parent for
   SabreSwap, LookaheadSwap, and BasicSwap, while the output oracle is blind. Runner: `scripts/verify_14919_routing.py`.
   **H5 (functional #16285):** not built/run; input-specific panic.
 
 ### Honest synthesis
 Across the historical set, the pilot's production black-box oracles on a laptop verify **0** of the output-invisible
-events, which is exactly the observability gap, while the fault-class-matched oracles verify four from source:
-H1 (#14603, isolated-pass asymmetric error), H2 (#14919, MR-1 violation on all three routing passes),
-H3 (#14730, fixed-seed non-determinism), and H4 (#14120, Stage-2 confirmed, ~316x at 27q). The **mutation
-cohort (9 quality faults) remains a complementary backbone.** This
-is itself a credible pilot finding: black-box semantic/perf oracles under-detect real
-internal/property/timing regressions, which motivates (a) the targeted-trigger + retrospective
-design and (b) the Phase-6 scale-up with stronger oracles and controlled-hardware timing. Per the
-§5.4 claim-scope rule (one verified forward-regression event, H4; the contract/metadata, global-phase and determinism cases are retrospective fix-boundary reproductions), headline temporal-generalization claims are withheld.
+events, which is exactly the observability gap, while the fault-class-matched oracles (or an isolated-pass
+differential) verify four from source: H1 (#14603, isolated-pass asymmetric error), H2 (#14919, MR-1 violation on
+all three routing passes), H3 (#14730, fixed-seed non-determinism), and H4 (#14120, Stage-2 confirmed, ~316x at
+27q). The **mutation cohort (9 quality faults) remains a complementary backbone.** This is itself a credible pilot
+finding: black-box semantic/perf oracles under-detect real internal/property/timing regressions, which motivates
+(a) the targeted-trigger + retrospective design and (b) the Phase-6 scale-up with stronger oracles and
+controlled-hardware timing. Per the §5.4 claim-scope rule (one verified forward-regression event, H4; the
+contract/metadata, global-phase and determinism cases are retrospective fix-boundary reproductions), headline
+temporal-generalization claims are withheld.
 
 ### A bug found & fixed during validation
 The H4 `--unit-limit 16` retry crashed: the semantic oracle built a full 2^18 operator (512 GiB) for
@@ -125,8 +130,9 @@ fall to structural (memory-safe). The 13–22q sampled-SV tier is a documented d
   claim is permitted, results are **pilot evidence**, per event, per cohort (METHODOLOGY §5.4).
 
 ## Status of work
-- `events.json` reconciled with real SHAs + cohort fields (historical remain skipped by the
-  in-process Phase-2 engine because `candidate_sha != baseline_sha`).
+- `events.csv` and `events.json` are the single canonical ledger (14 events), validated equal by
+  `scripts/validate_ledger.py`; the historical events remain skipped by the in-process Phase-2 engine
+  because `candidate_sha != baseline_sha`.
 - A **minimal per-event from-source venv runner** is implemented to validate one fix-boundary event,
   H4, and the functional event on your laptop (`cart historical-run`). Full Phase-2 collection and
   Phase 6 are NOT started.

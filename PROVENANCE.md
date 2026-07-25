@@ -5,7 +5,7 @@ frozen seven-channel codebook (`data/mining_validation/CODEBOOK_v2_FROZEN.md`). 
 coded what and which files produce each κ.
 
 ## Coders
-- **Coder R1 (Author 1)** — quantum-software background; see the signed declaration in `declarations/`.
+- **Coder R1 (Author 1)** — quantum-software background; see the declaration to be deposited in `declarations/`.
 - **Coder R2 (independent)** — software-engineering background, not an author of the manuscript, blinded to
   R1's labels; see `declarations/`. The blinded second-pass materials and
   the external-rater instruction package are in `data/mining_validation/for_SE_rater/` and the
@@ -35,5 +35,5 @@ the reported reliability rests solely on the human double-coding above. (Use of 
 the manuscript.)
 
 ## Signed declarations
-Each coder's signed declaration (role, dates, independence, blinding, and the worksheet file holding their
-raw labels) is in `declarations/`.
+The signed coder declarations (role, dates, independence, blinding, and the worksheet file holding each coder's
+raw labels) will be deposited in `declarations/` before submission.

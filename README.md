@@ -22,7 +22,7 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
   differ, metamorphic MR-1, global-phase tracker), labels, metrics, validity gates, and a CLI.
 - `data/mining_validation/` — the repository-mining corpus and coding:
   - `labels_final_68.csv` — the 68-fix corpus (19 output-invisible = 28%, 95% Wilson CI 19–40%).
-  - `label_source_validation.csv` — 11 labels validated against source (11/11 match the coded channel).
+  - `label_source_validation.csv` — 16 labels source-checked in both directions: 11 primary source validations plus a 5-case symmetric false-negative audit; all 16 agreed with the coded channel.
   - `pr_characterization_raw.csv`, `pr_characterization_summary.csv` — RQ1b metadata (size, latency).
   - human worksheets, adjudication sheets, the frozen codebook, and the tket/Cirq cross-SDK worksheets.
 - `data/observability_mining.csv` — the mining dataset.
@@ -43,7 +43,7 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
     python scripts/verify_14919_routing.py        # #14919 metamorphic MR-1
     python scripts/source_validate_mining.py --only 14956   # #14956 global phase
 
-    # 3. Label source-validation (11 fixes) -> data/mining_validation/label_source_validation.csv
+    # 3. Label source-validation (16 fixes, both directions) -> data/mining_validation/label_source_validation.csv
 
     # 4. RQ1b characterization: pull PR metadata, then read the summary
     #    (set GITHUB_TOKEN to avoid the API rate limit; a no-scope classic token is enough)
