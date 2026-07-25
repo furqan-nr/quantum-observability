@@ -53,3 +53,6 @@ build_paper.js
 
 # --- paper-supporting research docs: excluded (repo is reproduction-only, per author) ---
 SLR/
+
+# per-run evaluate output dirs (regenerate via cart evaluate)
+results/phase5-*/

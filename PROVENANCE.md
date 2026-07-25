@@ -14,7 +14,7 @@ reported κ. This document records who coded what and which files produce each �
   author, blinded. Independently coded the **Qiskit seed + expansion only** (`rater3_sheet.csv`), as an
   additional check not pooled into the reported κ. Signed declaration: `declarations/Coder_Declaration_Sajjad.pdf`.
 
-Each in-scope fix was classified independently by each coder from the pull-request description, linked
+Each coder independently classified every fix in the corpus assigned to them, from the pull-request description, linked
 issues, diffs, release notes and regression tests, using only the frozen codebook. Disagreements between
 R1 and R2 were adjudicated against the codebook (`adjudication_44.csv`, `adjudication_decisions.csv`);
 adjudication did not overwrite the raw per-coder labels.

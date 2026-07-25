@@ -22,7 +22,8 @@ def _event(eid):
 def test_targeted_circuits_build():
     for tid in TARGETED_UNITS:
         qc = build_targeted(tid)
-        assert qc.num_qubits >= 3
+        # >= 1: the global-phase trigger (trig-gp14956-cc-2pi) is a legitimate single-qubit circuit.
+        assert qc.num_qubits >= 1
 
 
 def test_targeted_mapping_to_faults():

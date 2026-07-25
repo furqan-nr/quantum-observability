@@ -20,6 +20,8 @@ class FaultType(str, Enum):
     semantic = "semantic"       # wrong unitary / output
     quality = "quality"         # 2Q-count or depth degradation
     performance = "performance" # runtime / memory degradation
+    contract_metadata = "contract_metadata"  # corrupted layout/permutation contract metadata (output-invisible)
+    determinism = "determinism"              # fixed-seed non-determinism across fixed seeds (output-invisible)
 
 
 class TrainOrTest(str, Enum):

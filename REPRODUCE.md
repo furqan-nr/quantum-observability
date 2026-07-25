@@ -71,7 +71,7 @@ python scripts/heldout_oracle_eval.py                    # held-out specificity 
 ```
 
 Expected: an output-equivalence oracle cannot distinguish the buggy build from its fix, yet the
-fault-class-matched oracle (or a dedicated runner) detects it. At least two real source-verified faults
+fault-class-matched oracle (or a dedicated runner) detects it. At least two real source-evidenced faults
 per channel: contract/metadata (#14603, #14919), global phase (#14956, #16201), determinism (#14730,
 #16237). Result JSONs are written to `results/`.
 

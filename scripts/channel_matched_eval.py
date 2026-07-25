@@ -8,8 +8,8 @@ circuits and phase offsets), and measures, on the anchor Qiskit (no from-source 
   * SPECIFICITY  - fraction of clean-baseline oracle runs that do NOT fire, with a Wilson interval;
   * RUNTIME      - median matched-oracle call time (ms);
   * MEMORY       - peak traced memory of a matched-oracle call (KB).
-Contract/metadata-channel sensitivity is reported from the two source-verified real fixes
-(#14603 contract differ, #14919 MR-1); determinism is reproduced separately under a noise-scored target (scripts/determinism_eval.py).
+Contract/metadata-channel sensitivity is exercised by two source-evidenced real fixes, each detected by its own mechanism
+(#14603 isolated-pass exception differential, #14919 MR-1); determinism is reproduced separately under a noise-scored target (scripts/determinism_eval.py).
 Run from repo root:  python scripts/channel_matched_eval.py
 Writes results/channel_matched_eval.json and prints the metrics table.
 """
@@ -101,8 +101,8 @@ def main():
         "specificity_all_channels": {
             "clean_runs": tn + fp, "false_positives": fp,
             "specificity": round(spec, 3), "specificity_wilson95": wilson(tn, tn + fp)},
-        "contract_metadata_channel": {"note": "sensitivity from 2 source-verified real fixes",
-            "detected": 2, "of": 2, "fixes": ["#14603 (contract differ)", "#14919 (MR-1)"]},
+        "contract_metadata_channel": {"note": "two source-evidenced real fixes, each detected by its own mechanism",
+            "detected": 2, "of": 2, "fixes": ["#14603 (isolated-pass exception differential)", "#14919 (MR-1)"]},
         "determinism_channel": {"note": "reproduced separately under a noise-scored target; see scripts/determinism_eval.py and results/determinism_eval.json"},
     }
     (ROOT / "results").mkdir(exist_ok=True)

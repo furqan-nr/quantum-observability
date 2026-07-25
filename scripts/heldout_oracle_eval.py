@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Held-out evaluation of the fault-class-matched oracles (EMSE R2, point 1).
 
-SPECIFICITY: run the 10 mutation families (all disjoint from the three source-verified design cases
+SPECIFICITY: run the 10 mutation families (all disjoint from the three source-evidenced design cases
 #14603/#14919/#14956) through the matched oracles and measure false positives on clean baselines and
 spurious firings on these out-of-channel faults.
 SENSITIVITY: inject a synthetic, held-out global-phase corruption and confirm the global-phase oracle

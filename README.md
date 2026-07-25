@@ -32,12 +32,15 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
 - `configs/`, `tests/` — frozen pre-declared configs and the automated test suite.
 
 ## Reproduce the headline results
-    # 1. Mining headline: 19/68 = 28% output-invisible, with Cohen's kappa
+    # 1a. Mining headline: 19/68 = 28% output-invisible (whole 68-fix corpus)
+    python -c "import csv; r=list(csv.DictReader(open('data/mining_validation/labels_final_68.csv'))); inv=sum(x['observable']=='no' for x in r); print(f'{inv}/{len(r)} = {round(100*inv/len(r))}% output-invisible')"
+
+    # 1b. Inter-rater agreement (Cohen's kappa) on the 44-fix expansion  (prints kappa; that subset is 8/44)
     python scripts/score_worksheet.py \
         data/mining_validation/human_worksheet_44_R1.csv \
         --rater2 data/mining_validation/human_worksheet_44_R2.csv
 
-    # 2. Three source-verified detections (needs a Rust toolchain to build the per-event
+    # 2. Three source-evidenced detections (needs a Rust toolchain to build the per-event
     #    Qiskit revisions from source; cached under environment/_builds when present)
     python scripts/verify_h1_isolated.py          # #14603 contract/metadata
     python scripts/verify_14919_routing.py        # #14919 metamorphic MR-1
