@@ -1,0 +1,2 @@
+pr,title,R1_channel,R2_channel,headline_critical,AGREED_channel,AGREED_observable,resolution_basis,reason
+11351,Don't substitute ideal gates in target with Optimize1qGatesDecomposition,circuit_quality,contract_metadata,YES,contract_metadata,no,source_evidence,"Diff+release note: pass now defers to the original gate when the resynthesis has the SAME error and gate count; equivalent same-count substitution, invisible to an output-equivalence oracle (codebook Rule 3). R1 revised from circuit_quality after diff review; matches R2."

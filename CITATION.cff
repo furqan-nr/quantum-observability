@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite both the software (metadata below) and the accompanying paper (see preferred-citation)."
 title: "Oracle Observability of Quantum Transpiler Regressions (cart)"
-version: "1.2.0"
-date-released: "2026-06-30"
+version: "1.3.0"
+date-released: "2026-09-06"
 license: MIT
 type: software
 repository-code: "https://github.com/furqan-nr/quantum-observability"

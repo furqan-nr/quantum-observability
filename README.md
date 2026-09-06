@@ -22,6 +22,9 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
   differ, metamorphic MR-1, global-phase tracker), labels, metrics, validity gates, and a CLI.
 - `data/mining_validation/` — the repository-mining corpus and coding:
   - `labels_final_68.csv` — the 68-fix corpus (19 output-invisible = 28%, 95% Wilson CI 19–40%).
+  - `labels_final_104.csv` — confirmatory extension: the 68-fix corpus plus a wider-window,
+    independently dual-coded third round of 36 further fixes (29/104 = 27.9% output-invisible, 95%
+    Wilson CI 20–37%; see `BATCH_002_CODING_COMPLETE.md`).
   - `label_source_validation.csv` — 16 labels source-checked in both directions: 11 primary source validations plus a 5-case symmetric false-negative audit; all 16 agreed with the coded channel.
   - `pr_characterization_raw.csv`, `pr_characterization_summary.csv` — RQ1b metadata (size, latency).
   - human worksheets, adjudication sheets, the frozen codebook, the rater sheets, signed coder declarations, and the tket/Cirq cross-SDK worksheets.
@@ -34,6 +37,9 @@ fault-class-matched oracle family, all under a leakage-safe evaluation methodolo
 ## Reproduce the headline results
     # 1a. Mining headline: 19/68 = 28% output-invisible (whole 68-fix corpus)
     python -c "import csv; r=list(csv.DictReader(open('data/mining_validation/labels_final_68.csv'))); inv=sum(x['observable']=='no' for x in r); print(f'{inv}/{len(r)} = {round(100*inv/len(r))}% output-invisible')"
+
+    # 1a-confirm. Confirmatory extension: 29/104 = 27.9% output-invisible (68-fix corpus + 36-fix third round)
+    python -c "import csv; r=list(csv.DictReader(open('data/mining_validation/labels_final_104.csv'))); inv=sum(x['observable']=='no' for x in r); print(f'{inv}/{len(r)} = {round(100*inv/len(r),1)}% output-invisible')"
 
     # 1b. Inter-rater agreement (Cohen's kappa) on the 44-fix expansion  (prints kappa; that subset is 8/44)
     python scripts/score_worksheet.py \
