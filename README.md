@@ -5,7 +5,7 @@ What Output-Equivalence Oracles Miss — A Cross-SDK Mining Study and a Fault-Cl
 Family for the Output-Invisible Channels (Qiskit, tket, Cirq)."** (under submission)
 
 - **Repository:** https://github.com/furqan-nr/quantum-observability
-- **Archive (DOI):** to be minted on release (Zenodo)
+- **Archive (DOI):** [10.5281/zenodo.22484774](https://doi.org/10.5281/zenodo.22484774) (Zenodo, archiving GitHub release `v1.0.0`)
 - **License:** MIT (see `LICENSE`)
 
 Quantum compilers such as Qiskit's transpiler change constantly, and a single pass modification can
