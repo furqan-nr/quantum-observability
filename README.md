@@ -2,8 +2,10 @@
 
 Reproducibility package for **"An Empirical Study of Equivalence-Invisible Bug Fixes in Quantum
 Transpilers (Qiskit, tket, Cirq)"** (Nasir, Shah, Alam; submitted to the *Journal of Systems and
-Software*, Elsevier), and for the `cart` research prototype used by a companion, in-preparation
-paper on a fault-class-matched oracle family for the same channels.
+Software*, Elsevier). This repository holds only the mining and coding evidence behind that paper:
+the frozen codebook, the raw and adjudicated coding labels, the cross-SDK replication worksheets,
+the surface-characteristic data, the coder declarations, and the scripts needed to regenerate every
+reported number.
 
 - **Repository:** https://github.com/furqan-nr/quantum-observability
 - **Archive (DOI):** [10.5281/zenodo.22484774](https://doi.org/10.5281/zenodo.22484774) (Zenodo, archiving GitHub release `v1.0.0`)
@@ -19,13 +21,9 @@ global phase while the output map stays correct, so they are invisible to an out
 oracle by construction. The same gap replicates in tket (7/21, 33%) and, on a smaller exploratory
 sample, in Cirq (2/10, 20%). Equivalence-invisible fixes show no detectable difference from
 observable ones on five cheap PR-level surface signals, so they cannot be triaged away by a size or
-latency heuristic. `cart` is a separate, leakage-safe evaluation framework that additionally provides
-a fault-manifestation taxonomy and a family of fault-class-matched oracles targeting these channels,
-built for the companion paper.
+latency heuristic.
 
 ## What's inside
-- `src/cart/` — the `cart` research prototype: manifest, events, oracles (layout/permutation contract
-  differ, metamorphic MR-1, global-phase tracker), labels, metrics, validity gates, and a CLI.
 - `data/mining_validation/` — the repository-mining corpus and coding:
   - `labels_final_68.csv` — the 68-fix corpus (19 equivalence-invisible = 28%, 95% Wilson CI 19–40%).
   - `labels_final_104.csv` — secondary robustness check: the 68-fix corpus plus a wider-window,
@@ -44,11 +42,10 @@ built for the companion paper.
   (κ=0.41, moderate). The second is a full, diff-level independent recoding of all 19
   equivalence-invisible fixes specifically (κ=0.87, almost-perfect); see `RECODE_RESULTS.md` inside
   it for the adjudicated disagreements.
-- `data/events/` — the audited 14-event change-event ledger (`events.csv`/`events.json`, kept in sync and checked by `scripts/validate_ledger.py`); bisection-traced forward-regression candidates pending verification live in `PROVENANCE_BACKLOG.md`.
-- `results/` — write-once raw oracle artifacts (source_validation, contract_differ, retro_detect, bisect).
-- `environment/` — pinned harness lockfiles and the per-event from-source Qiskit build recipes.
-- `scripts/` — reproduction entry points.
-- `configs/`, `tests/` — frozen pre-declared configs and the automated test suite.
+- `declarations/` — signed independent-coder declarations (R2, R3).
+- `scripts/` — the five reproduction entry points used below (`mine_sdk.py`, `pull_pr_metadata.py`,
+  `score_worksheet.py`, `r3_sensitivity_check.py`, `table5_stats.py`). No package install is needed;
+  each script only needs the Python standard library plus `scipy`/`numpy` for `table5_stats.py`.
 
 ## Reproduce the headline results
     # 1a. Mining headline: 19/68 = 28% equivalence-invisible (primary 68-fix corpus)
@@ -72,20 +69,15 @@ built for the companion paper.
     # 1e. RQ1.3 surface-characteristic comparison (Table 5): Mann-Whitney U, Cliff's delta, bootstrap 95% CI
     python scripts/table5_stats.py
 
-    # 2. Three source-evidenced detections (needs a Rust toolchain to build the per-event
-    #    Qiskit revisions from source; cached under environment/_builds when present)
-    python scripts/verify_h1_isolated.py          # #14603 contract/metadata
-    python scripts/verify_14919_routing.py        # #14919 metamorphic MR-1
-    python scripts/source_validate_mining.py --only 14956   # #14956 global phase
+    # 2. Label source-validation (16 fixes, both directions) -> data/mining_validation/label_source_validation.csv
+    #    A manual construct-validity check, not a re-runnable script; the worksheet is the artifact.
 
-    # 3. Label source-validation (16 fixes, both directions) -> data/mining_validation/label_source_validation.csv
-
-    # 4. RQ1.3 characterization: pull PR metadata, then read the summary
+    # 3. RQ1.3 characterization: pull PR metadata, then read the summary
     #    (set GITHUB_TOKEN to avoid the API rate limit; a no-scope classic token is enough)
     python scripts/pull_pr_metadata.py
     #    -> data/mining_validation/pr_characterization_{raw,summary}.csv
 
-    # 5. RQ1.4 fault-mechanism-category reliability: title-level spot-check (κ=0.41) is documented in
+    # 4. RQ1.4 fault-mechanism-category reliability: title-level spot-check (κ=0.41) is documented in
     #    data/rq14_spotcheck/SPOTCHECK_RESULTS.md; the diff-level recheck on all 19 equivalence-invisible
     #    fixes (κ=0.87) is documented in data/rq14_invisible19_recode/RECODE_RESULTS.md. Both are
     #    human-coding reliability studies, not re-runnable scripts — the worksheets and adjudication are

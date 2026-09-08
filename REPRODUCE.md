@@ -1,9 +1,8 @@
-# Reproducibility package — `cart`
+# Reproducibility package
 
 This archive accompanies the manuscript **"An Empirical Study of Equivalence-Invisible Bug Fixes in
 Quantum Transpilers (Qiskit, tket, Cirq)"** (Nasir, Shah, Alam; submitted to the *Journal of Systems
-and Software*, Elsevier), and the `cart` research prototype used by a companion, in-preparation paper
-on a fault-class-matched oracle family for the same channels.
+and Software*, Elsevier).
 
 - Repository: https://github.com/furqan-nr/quantum-observability
 - Archive (DOI): [10.5281/zenodo.22484774](https://doi.org/10.5281/zenodo.22484774) (Zenodo, archiving GitHub release `v1.0.0`)
@@ -15,38 +14,23 @@ separately.
 ## What is here
 
 ```
-src/cart/            the cart prototype (CLI + manifest, events, oracles, labels,
-                     metrics, validity gates)
-scripts/             verification and mining tooling (see the commands below)
-tests/               automated test suite (incl. the six validity gates)
-configs/             frozen, pre-declared config: stage_map, thresholds, budgets,
-                     cutoff, seeds
+scripts/             the five reproduction entry points (see the commands below)
 data/
-  events/            audited change-event ledger with exact candidate/baseline SHAs
-  manifest_static/   static test-unit manifest + targeted triggers
-  raw/               write-once raw oracle evidence (per event)
-  derived/           labels regenerated from raw evidence
-  mining_validation/labels_final_68.csv  canonical 68-fix mining labels (28% equivalence-invisible)
-  mining_validation/             final 68-fix labels, the 104-fix secondary check, human
-                                 worksheets, the frozen codebook, adjudication trail,
-                                 source-validation, R3's independent labels, surface-
-                                 characteristic data, and the tket/Cirq cross-SDK worksheets
+  mining_validation/  final 68-fix labels, the 104-fix secondary check, human
+                       worksheets, the frozen codebook, adjudication trail,
+                       source-validation, R3's independent labels, surface-
+                       characteristic data, and the tket/Cirq cross-SDK worksheets
+                       (labels_final_68.csv is the canonical 68-fix corpus, 28% equivalence-invisible)
   rq14_spotcheck/                RQ1.4 mechanism-coding: title-level spot-check (kappa=0.41)
   rq14_invisible19_recode/       RQ1.4 mechanism-coding: diff-level recheck of all 19
                                  equivalence-invisible fixes (kappa=0.87)
-results/             generated evaluation outputs and write-once oracle result JSONs
-environment/         two-layer env recipes; pinned requirements; per-event
-                     from-source build scripts (the built Qiskit trees are NOT shipped)
+declarations/         signed independent-coder declarations (R2, R3)
 ```
 
-## Install
+## Requirements
 
-```bash
-python -m pip install -e .            # Python 3.11 (or set PYTHONPATH=src)
-```
-
-The harness layer is pinned in `environment/requirements.lock` (`requirements.lock.sha256`
-records its hash).
+Python 3.9+, standard library only, plus `scipy` and `numpy` for `scripts/table5_stats.py`. No
+package install is needed — the scripts are run directly from the repository root.
 
 ## 1. Oracle-observability mining study (the headline finding)
 
@@ -81,41 +65,6 @@ CI [6%, 51%], kappa = 0.52 (moderate) — reported as exploratory rather than re
 since Cirq's transformer bug-fix history has too few remaining eligible cases at this scope to grow
 the sample responsibly (see `data/mining_validation/tket_replication.md`).
 
-## 2. Source-verified detections in all three output-invisible channels
-
-```bash
-python scripts/verify_h1_isolated.py                     # #14603 contract/metadata (isolated-pass differ)
-python scripts/verify_14919_routing.py                   # #14919 metamorphic MR-1
-python scripts/source_validate_mining.py --only 14956    # #14956 global phase
-python scripts/determinism_eval.py                       # #14730 determinism (5 hash seeds, 50 runs)
-python scripts/verify_16201.py                           # #16201 global phase (UnrollForLoops)
-python scripts/verify_16237.py                           # #16237 determinism (ConsolidateBlocks)
-python scripts/channel_matched_eval.py                   # channel-matched global-phase family
-python scripts/heldout_oracle_eval.py                    # held-out specificity (0 FP over 54 runs)
-```
-
-Expected: an output-equivalence oracle cannot distinguish the buggy build from its fix, yet the
-fault-class-matched oracle (or a dedicated runner) detects it. At least two real source-evidenced faults
-per channel: contract/metadata (#14603, #14919), global phase (#14956, #16201), determinism (#14730,
-#16237). Result JSONs are written to `results/`.
-
-## 3. Anchor cases requiring from-source Qiskit builds
-
-```bash
-python scripts/verify_h1_property.py    # H1 (ElidePermutations, PR #14603): property/layout oracle
-python scripts/verify_h4_perf.py        # H4 (VF2PostLayout no-op, PR #14120): Stage-2 perf protocol
-```
-
-Expected: the output-equivalence oracle cannot distinguish the buggy **H1** build from its fix, while
-the fault-class-matched property/isolated-pass oracle detects it. **H4** is confirmed as the study's one
-prospective forward regression, with a candidate slowdown that grows with width from about 1.9x (16
-qubits) to more than 300x (27 qubits) on symmetric circuits over a large heavy-hex map (Cliff's delta = 1.0).
-
-Building the per-event Qiskit revisions from source needs a Rust toolchain; the recipe is in
-`environment/setup/` (`SETUP.md`, `SETUP_WINDOWS.md`, `build_qiskit_event.*`) and the recorded
-`baseline_sha` / `candidate_sha` in the event ledger pin exactly what to build. Built trees are cached
-under `environment/_builds/` when present and are NOT shipped.
-
 ## RQ1.3 — are equivalence-invisible fixes distinguishable by surface characteristics?
 
 ```bash
@@ -147,10 +96,16 @@ sit alongside it, both human-coding studies rather than re-runnable scripts:
   adjudicated against each PR's own GitHub diff; both resolved in favor of the original label, so no
   category count changes (`RECODE_RESULTS.md`).
 
+## Label source-validation
+
+16 fixes were source-checked in both directions (11 primary source validations plus a 5-case
+symmetric false-negative audit); all 16 agreed with the coded channel. This is a manual
+construct-validity check, not a re-runnable script — `data/mining_validation/label_source_validation.csv`
+is the artifact.
+
 ## Notes
 
-- Raw oracle evidence in `data/raw/` is write-once; labels in `data/derived/` regenerate from it.
 - The reported inter-rater agreement is a pairwise Cohen's kappa between the two independent human
   coders; disagreements were adjudicated against the frozen codebook.
-- Claim scope: with fewer than three verified forward-regression events, comparative claims are reported
-  per event rather than as a temporal-generalization claim.
+- Every number reported in the manuscript traces to a file in `data/mining_validation/` or one of the
+  two `rq14_*` folders; none is re-derived from data outside this archive.

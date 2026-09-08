@@ -1,28 +1,8 @@
-node_modules/
 __pycache__/
 *.pyc
 *.pyo
-.venv*/
-venv/
-environment/_builds/
-build/
-target/
-*.so
-*.pyd
 .DS_Store
-.ipynb_checkpoints/
-GSC files/
-preparation/
-Candidate*.docx
-*.skill
-SCALEUP_PROTOCOLS.md
-FORWARD_REGRESSION_PLAN.md
-REVISION_TODO.md
-PROJECT_PLAN.md
-RELEASE_WINDOW_DECISION.md
-VERSION_1.md
-_PAPER1_README.md
-P1_P3_RUNBOOK.md
+Thumbs.db
 
 # --- backups, scratch, generated previews (not needed for reproducibility) ---
 *_ORIG.*
@@ -32,8 +12,6 @@ P1_P3_RUNBOOK.md
 *.log
 *~
 ~$*
-*_preview.png
-paper/figures/*_ORIG.png
 
 # --- editor / OS / packaging junk ---
 .vscode/
@@ -41,18 +19,43 @@ paper/figures/*_ORIG.png
 *.egg-info/
 .pytest_cache/
 .mypy_cache/
-Thumbs.db
 
-# --- manuscript + figure sources: NOT part of the reproduction artifact ---
-# (these live in the private working copy; GitHub repo is reproduction-only)
+# --- manuscript, figures, and code for other/companion papers: NOT part of this
+# reproduction artifact (this repo is Paper 1A mining-study evidence only) ---
 paper/
 diagrams/
 PAPER.docx
 PAPER.pdf
 build_paper.js
-
-# --- paper-supporting research docs: excluded (repo is reproduction-only, per author) ---
 SLR/
-
-# per-run evaluate output dirs (regenerate via cart evaluate)
-results/phase5-*/
+src/
+tests/
+configs/
+environment/
+pyproject.toml
+METHODOLOGY.md
+data/raw/
+data/derived/
+data/events/
+data/manifest_static/
+data/profile_baseline/
+results/
+scripts/add_forward_event.py
+scripts/bisect_regression.py
+scripts/channel_matched_eval.py
+scripts/contract_differ_sweep.py
+scripts/determinism_eval.py
+scripts/find_introducing_commit.py
+scripts/heldout_oracle_eval.py
+scripts/repro_fixedseed_nondeterminism.py
+scripts/retro_detect_release.py
+scripts/source_validate_mining.py
+scripts/validate_ledger.py
+scripts/verify_14919_routing.py
+scripts/verify_14998.py
+scripts/verify_16201.py
+scripts/verify_16237.py
+scripts/verify_h1_isolated.py
+scripts/verify_h1_property.py
+scripts/verify_h4_perf.py
+scripts/verify_n4_global_phase.py
