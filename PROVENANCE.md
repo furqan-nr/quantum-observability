@@ -59,3 +59,24 @@ in the manuscript.)
 The signed coder declarations (role, dates, independence, blinding, and the worksheet files holding each
 coder's raw labels) are deposited in `declarations/`: `Coder_Declaration_Atif.pdf` (R2) and
 `Coder_Declaration_Sajjad.pdf` (R3). Coder R1 is Author 1 of the manuscript.
+
+## RQ1.4 mechanism-category coding reliability (separate from the channel-taxonomy kappa above)
+
+The manuscript's RQ1.4 (recurring fault-mechanism categories, §5.5/Table 6) is a single-coder,
+diff-verified classification, exploratory by design, with two independent reliability checks against
+R3 (Muhammad Sajjad Saleem):
+
+- `data/rq14_spotcheck/` — an earlier, title-level spot-check on a mixed 19-item sample (10
+  contract/metadata fixes + 9 random draws from the full 68): Cohen's kappa = 0.41 (moderate). R3
+  told us at the time he was working under time pressure and might not have every call right; this
+  round is kept for the methodological record, not as the reported reliability figure.
+- `data/rq14_invisible19_recode/` — R3 recoded, this time with adequate time and at diff level (not
+  title level), all 19 equivalence-invisible fixes specifically, blinded to the existing labels: 17/19
+  raw agreement (89.5%), Cohen's kappa = 0.87 (almost-perfect). Both disagreements (#14603, #14939)
+  were adjudicated against the actual GitHub diff and resolved in favor of the original label in both
+  cases, so no reported category count changed. See `RECODE_RESULTS.md` inside that folder for the
+  full adjudication.
+
+The jump from kappa = 0.41 to kappa = 0.87 is attributable to the protocol change (adequate time,
+diff-level rather than title-level reading) and not to reduced independence: the blinding procedure
+was identical both times.

@@ -1,0 +1,69 @@
+pr,channel_final_adjudicated,observable,mechanism_category,title
+13670,output_semantic,yes,commutation_checker_defect,Fix 4-pi periodicity of controlled rotations in the CommutationChecker
+13790,output_semantic,yes,control_flow_gap,Do not contract control-flow operations during SabreSwap
+13820,compilation_failure,yes,api_plumbing_or_serialization,Delegate BasePass.__call__ to PassManager.run
+13833,contract_metadata,no,cross_representation_conversion,Fix tracking of routing permutation in Sabre with disjoint backends
+13874,output_semantic,yes,commutation_checker_defect,Use average gate fidelity in the commutation checker
+13910,contract_metadata,no,cross_representation_conversion,Propagate DAGCircuit.name in ApplyLayout
+13945,contract_metadata,no,cross_representation_conversion,Fix composing virtual permutation layouts for ElidePermutations and StarPreRouting
+14041,contract_metadata,no,api_plumbing_or_serialization,Fix deepcopy/pickle of DAGCircuit variable IO nodes
+14330,compilation_failure,yes,unchecked_numeric_edge_case,Fix alignment checks of stretch variables
+14405,circuit_quality,yes,missing_validation_or_contract_check,Read timing constraints from target when no backend is provided
+14597,output_semantic,yes,control_flow_gap,Fix HLS classical-bit mapping from control-flow blocks
+14603,contract_metadata,no,rust_port_metadata_loss,Fix ElidePermutations pass in the presence of PermutationGates
+14606,compilation_failure,yes,missing_validation_or_contract_check,Fix ApplyLayout with empty layout
+14655,output_semantic,yes,control_flow_gap,"Fix CommutativeInverseCancellation for Clifford, control-flow, and non-invertible operations"
+14667,compilation_failure,yes,logic_error_pass_specific,Restore correct max_trials behaviour for VF2Layout pass
+14670,output_semantic,yes,logic_error_pass_specific,Fix MCX dirty-ancilla qubit accounting in HLS selection
+14730,determinism,no,nondeterministic_ordering,Fix non-determinism VF2Layout with only 1q gates
+14763,determinism,no,nondeterministic_ordering,Fix non-determinism in CommutativeCancellation
+14765,output_semantic,yes,missing_validation_or_contract_check,Fix Target.py_instruction_supported behavior
+14869,circuit_quality,yes,missing_validation_or_contract_check,Do not run VF2PostLayout when an explicit layout is supplied
+14919,contract_metadata,no,cross_representation_conversion,Fix composition of final_layout
+14938,contract_metadata,no,logic_error_pass_specific,Fix VF2 layout allocation with idle qubits
+14939,contract_metadata,no,cross_representation_conversion,Fix TranspileLayout.initial_index_layout with unordered virtuals
+14956,global_phase,no,global_phase_bookkeeping,Fix global-phase handling in CommutativeCancellation
+14978,output_semantic,yes,cross_representation_conversion,Un-provide standard_operation for PyGate
+14998,compilation_failure,yes,missing_validation_or_contract_check,Fix VF2PostLayout with uncoupled qubits in strict_direction=True
+15024,contract_metadata,no,rust_port_metadata_loss,Preserve registers through Python Layout to Rust TranspileLayout conversion
+15040,determinism,no,nondeterministic_ordering,Fix DAG push-edge ordering non-determinism
+15074,compilation_failure,yes,api_plumbing_or_serialization,Fix pickling of SabreSwap
+15083,output_semantic,yes,control_flow_gap,Fix ConsolidateBlocks qubit mapping inside control-flow blocks
+15110,compilation_failure,yes,unchecked_numeric_edge_case,Raise exception not panic on bad ConsolidateBlocks input
+15117,compilation_failure,yes,unchecked_numeric_edge_case,Avoid panics in Optimize1qGatesDecomposition
+15131,circuit_quality,yes,missing_validation_or_contract_check,Check target gates are parameterized in optimize1qgatesdecomposition
+15137,contract_metadata,no,cross_representation_conversion,Fix HighLevelSynthesis for custom gate calibrations
+15143,output_semantic,yes,control_flow_gap,Fix control-flow qargs handling in BasisTranslator
+15147,compilation_failure,yes,missing_validation_or_contract_check,Fix schedule analysis passes with empty circuits
+15258,compilation_failure,yes,stateful_reuse_or_global_cache,Fix reuse of ConsolidateBlocks instances
+15286,output_semantic,yes,missing_validation_or_contract_check,Respect Target when selecting a non-default UnitarySynthesis plugin
+15401,output_semantic,yes,logic_error_pass_specific,Fix incorrect argument passed to generate_unroll_3q in Clifford+T transpilation
+15556,compilation_failure,yes,unchecked_numeric_edge_case,Fix zero-length permutation synthesis overflow
+15626,compilation_failure,yes,control_flow_gap,Fix BreakLoopOp object has no attribute blocks bug
+15685,output_semantic,yes,missing_validation_or_contract_check,Fix HLS qubit tracking for plugin-generated operations
+15781,compilation_failure,yes,unchecked_numeric_edge_case,Fix synth_clifford_depth_lnn for single-qubit Clifford circuits
+15875,compilation_failure,yes,control_flow_gap,Fix BasisTranslator processing of nested ControlFlowOp
+15933,compilation_failure,yes,commutation_checker_defect,Fix matrix-size validation in CommutationChecker
+15943,global_phase,no,global_phase_bookkeeping,Fix TemplateOptimization dropping the global_phase on substitution
+15967,circuit_quality,yes,logic_error_pass_specific,Fix stale best-DAG update in C transpiler optimization level 3
+16004,compilation_failure,yes,unchecked_numeric_edge_case,Fix synth_qft_line failure for circuits with 32 or more qubits
+16023,output_semantic,yes,commutation_checker_defect,Fix commutation checking between two Pauli product measurements
+16054,compilation_failure,yes,unchecked_numeric_edge_case,Fix ParameterVector global-phase panic in RemoveIdentityEquivalent
+16075,compilation_failure,yes,missing_validation_or_contract_check,Fix forced ConsolidateBlocks decomposition for incomplete bases
+16151,compilation_failure,yes,missing_validation_or_contract_check,Fix ConstrainedReschedule barrier handling
+16153,output_semantic,yes,logic_error_pass_specific,Fix cancellation of CS and CSdg in InverseCancellation
+16154,compilation_failure,yes,unchecked_numeric_edge_case,Add safe shape checking to synth_cz_depth_line_mr
+16163,output_semantic,yes,logic_error_pass_specific,Fix unsafe symmetric simplification of XXPlusYY in CommutativeOptimization
+16201,global_phase,no,global_phase_bookkeeping,Fix excessive global-phase accumulation in UnrollForLoops
+16215,global_phase,no,global_phase_bookkeeping,Preserve global phase in Commuting2qGateRouter
+16237,determinism,no,nondeterministic_ordering,Fix non-deterministic ConsolidateBlocks output with fixed transpiler seed
+16246,compilation_failure,yes,missing_validation_or_contract_check,Initialize ConstrainedReschedule.target unconditionally
+16249,compilation_failure,yes,unchecked_numeric_edge_case,Fix subtraction-underflow panic in ConstrainedReschedule
+16285,compilation_failure,yes,unchecked_numeric_edge_case,Fix panic on 1.0 error in VF2Layout
+16310,compilation_failure,yes,missing_validation_or_contract_check,Reject loopback edges in CouplingMap
+16337,output_semantic,yes,commutation_checker_defect,Fix CommutationChecker for controlled rotation gates
+16392,output_semantic,yes,stateful_reuse_or_global_cache,Fix global cache of SynthesizeRZRotations
+16402,global_phase,no,global_phase_bookkeeping,Fix incorrect global phase shift for P and U1 gates in CommutativeCancellation
+16409,output_semantic,yes,commutation_checker_defect,Accept rotation gate names in CommutationChecker filters
+16428,output_semantic,yes,logic_error_pass_specific,Correctly combining control modifiers in OptimizeAnnotated
+16476,performance,yes,stateful_reuse_or_global_cache,Fix cache and prediction misses in Target::qargs

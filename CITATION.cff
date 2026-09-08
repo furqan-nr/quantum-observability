@@ -18,14 +18,16 @@ keywords:
   - test oracle
   - quantum circuit equivalence checking
 abstract: >-
-  cart is a research prototype and leakage-safe evaluation framework for the
-  Qiskit transpiler. Its central finding is an oracle-observability gap: about
-  28% of real transpiler regressions (95% Wilson CI 19-40%) corrupt internal
-  contract/metadata, introduce non-determinism, or drop global phase, and are
-  therefore invisible to output-equivalence oracles. It also provides a
-  fault-manifestation taxonomy and a family of fault-class-matched oracles, in a
-  setting where the oracle must decide circuit equivalence modulo global phase
-  and qubit-layout permutation.
+  This archive holds two related lines of work built around the Qiskit transpiler's
+  output-equivalence oracle. The mining study finds that 19 of 68 merged Qiskit
+  transpiler bug-fixes (28%, 95% Wilson CI 19-40%), and 29 of 104 in a secondary
+  wider-window check (27.9%, CI 20-37%), repair faults that an output-equivalence
+  oracle cannot observe by construction: a corrupted layout/permutation record,
+  broken fixed-seed determinism, or a dropped global phase, while the compiled
+  output stays correct. The same gap replicates in tket (7/21, 33%) and, on a
+  smaller exploratory sample, in Cirq (2/10, 20%). The cart research prototype is a
+  leakage-safe evaluation framework that additionally provides a fault-manifestation
+  taxonomy and a family of fault-class-matched oracles targeting these channels.
 authors:
   - family-names: Nasir
     given-names: Furqan
@@ -40,7 +42,7 @@ authors:
     affiliation: "City University of Science and Information Technology (CUSIT), Peshawar, Pakistan"
 preferred-citation:
   type: article
-  title: "Oracle Observability of Quantum Transpiler Regressions: What Output-Equivalence Oracles Miss — A Cross-SDK Mining Study and a Fault-Class-Matched Oracle Family for the Output-Invisible Channels (Qiskit, tket, Cirq)"
+  title: "An Empirical Study of Equivalence-Invisible Bug Fixes in Quantum Transpilers (Qiskit, tket, Cirq)"
   authors:
     - family-names: Nasir
       given-names: Furqan
@@ -50,6 +52,6 @@ preferred-citation:
       orcid: "https://orcid.org/0000-0003-0090-3333"
     - family-names: Alam
       given-names: Iftikhar
-  journal: "Quantum Information Processing"
+  journal: "Journal of Systems and Software"
   year: 2026
-  notes: "Quantum Software Engineering topical collection (Springer). Status: under review; add volume, pages, and DOI on acceptance."
+  notes: "Elsevier. Status: under review; add volume, pages, and DOI on acceptance. A companion paper on a fault-class-matched oracle family for the equivalence-invisible channels identified here is in preparation and will be added as a second preferred-citation entry once available."
