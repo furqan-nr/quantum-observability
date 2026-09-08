@@ -59,3 +59,10 @@ scripts/verify_h1_isolated.py
 scripts/verify_h1_property.py
 scripts/verify_h4_perf.py
 scripts/verify_n4_global_phase.py
+data/mining_validation/labels_final.csv
+data/mining_validation/corpus.csv
+data/mining_validation/__deltest_5
+data/mining_validation/P4_maintainer_reply_READY.md
+data/mining_validation/P4_upstream_issue_READY.md
+data/mining_validation/P4_upstream_issue_draft.md
+data/mining_validation/whole_library_scoping/
