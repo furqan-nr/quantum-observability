@@ -54,6 +54,9 @@ latency heuristic.
     # 1a-confirm. Secondary robustness check: 29/104 = 27.9% equivalence-invisible (68-fix corpus + 36-fix third round)
     python -c "import csv; r=list(csv.DictReader(open('data/mining_validation/labels_final_104.csv'))); inv=sum(x['observable']=='no' for x in r); print(f'{inv}/{len(r)} = {round(100*inv/len(r),1)}% equivalence-invisible')"
 
+    # 1b-seed. Inter-rater agreement (binary + channel Cohen's kappa, bootstrap 95% CIs) on the 24-fix seed
+    python data/mining_validation/compute_kappa_analytic.py
+
     # 1b. Inter-rater agreement (Cohen's kappa) on the 44-fix expansion  (prints kappa; that subset is 8/44)
     python scripts/score_worksheet.py \
         data/mining_validation/human_worksheet_44_R1.csv \

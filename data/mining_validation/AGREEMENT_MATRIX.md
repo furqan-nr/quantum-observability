@@ -10,6 +10,12 @@ Cohen's kappa is a pairwise statistic between the two coders.
 
 Disagreements were adjudicated against the codebook; final labels in `labels_final_68.csv`.
 
+Reproduce the 24-fix seed agreement (binary + channel kappa, with bootstrap 95% CIs):
+
+```
+python compute_kappa_analytic.py
+```
+
 Reproduce the 44-fix agreement:
 
 ```

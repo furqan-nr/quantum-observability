@@ -37,6 +37,7 @@ package install is needed — the scripts are run directly from the repository r
 ```bash
 # authoritative headline over the final, human-adjudicated 68-fix corpus:
 python -c "import csv; r=list(csv.DictReader(open('data/mining_validation/labels_final_68.csv'))); inv=sum(x['observable']=='no' for x in r); print(f'{inv}/{len(r)} = {round(100*inv/len(r))}% equivalence-invisible')"
+python data/mining_validation/compute_kappa_analytic.py   # pairwise binary+channel kappa on the 24-fix seed
 python scripts/score_worksheet.py data/mining_validation/human_worksheet_44_R1.csv --rater2 data/mining_validation/human_worksheet_44_R2.csv   # pairwise kappa on the 44
 ```
 
