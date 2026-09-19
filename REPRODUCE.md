@@ -5,7 +5,7 @@ Quantum Transpilers (Qiskit, tket, Cirq)"** (Nasir, Shah, Alam; submitted to the
 and Software*, Elsevier).
 
 - Repository: https://github.com/furqan-nr/quantum-observability
-- Archive (DOI): [10.5281/zenodo.22484774](https://doi.org/10.5281/zenodo.22484774) (Zenodo, archiving GitHub release `v1.0.0`)
+- Archive (DOI): [10.5281/zenodo.22844504](https://doi.org/10.5281/zenodo.22844504) (Zenodo, archiving GitHub release `v2.0.0`)
 - License: MIT (see `LICENSE`)
 
 This repository is the reproduction artifact only; the manuscript and its figures are maintained

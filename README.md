@@ -8,7 +8,7 @@ the surface-characteristic data, the coder declarations, and the scripts needed 
 reported number.
 
 - **Repository:** https://github.com/furqan-nr/quantum-observability
-- **Archive (DOI):** [10.5281/zenodo.22484774](https://doi.org/10.5281/zenodo.22484774) (Zenodo, archiving GitHub release `v1.1.0`)
+- **Archive (DOI):** [10.5281/zenodo.22844504](https://doi.org/10.5281/zenodo.22844504) (Zenodo, archiving GitHub release `v2.0.0`)
 - **License:** MIT (see `LICENSE`)
 
 Quantum compilers such as Qiskit's transpiler change constantly, and a single pass modification can
